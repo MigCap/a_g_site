@@ -4,9 +4,9 @@
     "private": true,
     "homepage": "https://www.alejandroguijarro.com/",
     "dependencies": {
-        "@reach/router": "^1.2.1",
         "react": "^16.8.6",
         "react-dom": "^16.8.6",
+        "react-router-dom": "^5.0.1",
         "react-scripts": "3.0.1",
         "styled-components": "^4.3.2"
     },
@@ -15,6 +15,15 @@
         "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject"
+    },
+    "devDependencies": {
+        "@upstatement/eslint-config": "^0.4.2",
+        "babel-plugin-styled-components": "^1.10.6",
+        "eslint-config-prettier": "^6.0.0",
+        "eslint-plugin-jsx-a11y": "^6.2.3",
+        "eslint-plugin-react": "^7.14.3",
+        "husky": "^3.0.2",
+        "lint-staged": "^9.2.1"
     },
     "browserslist": {
         "production": [
@@ -27,15 +36,6 @@
             "last 1 firefox version",
             "last 1 safari version"
         ]
-    },
-    "devDependencies": {
-        "@upstatement/eslint-config": "^0.4.2",
-        "babel-plugin-styled-components": "^1.10.6",
-        "eslint-config-prettier": "^6.0.0",
-        "eslint-plugin-jsx-a11y": "^6.2.3",
-        "eslint-plugin-react": "^7.14.3",
-        "husky": "^3.0.1",
-        "lint-staged": "^9.2.1"
     },
     "eslintConfig": {
         "extends": "react-app"

@@ -6,15 +6,15 @@ const Main = styled.main`
   margin: 0 auto;
   max-width: 1400px;
   min-height: 100vh;
-  padding: 100px 80px;
+  padding: 100px 90px;
   ${media.desktop`
-    padding: 70px 50px;
+    padding: 70px 60px;
   `};
   ${media.tablet`
-    padding: 60px 40px;
+    padding: 60px 80px;
   `};
   ${media.phablet`
-    padding: 40px 25px;
+    padding: 40px 30px;
   `};
   h2 {
     ${media.tablet`

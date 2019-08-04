@@ -1,12 +1,20 @@
-import React, { Component } from 'react';
-import { Router } from '@reach/router';
+import React from 'react';
+//import { Router } from '@reach/router';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { createBrowserHistory } from 'history';
+
+import ScrollToTop from '../utils/ScrollToTop';
+
+import Nav from './Nav';
+import Home from './Home';
+import Works from './Works';
+import Bio from './Bio';
+import Contact from './Contact';
+import NoMatch from './NoMatch';
 
 import styled from 'styled-components/macro';
 import { GlobalStyle } from '../styles';
 import { theme, media } from '../styles';
-
-import Nav from './Nav';
-import Home from './Home';
 
 const AppContainer = styled.div`
   height: 100%;
@@ -20,14 +28,25 @@ const SiteWrapper = styled.div`
   `};
 `;
 
+const history = createBrowserHistory();
+
 const App = () => (
   <AppContainer>
     <GlobalStyle />
 
     <SiteWrapper>
-      <Nav />
       <Router>
-        <Home path="/" />
+        <Nav />
+
+        <ScrollToTop>
+          <Switch>
+            <Route path="/" exact component={Home} />
+            <Route exact path="/works" component={Works} />
+            <Route component={Bio} exact path="/bio" />
+            <Route component={Contact} exact path="/contact" />
+            <Route component={NoMatch} />
+          </Switch>
+        </ScrollToTop>
       </Router>
     </SiteWrapper>
   </AppContainer>

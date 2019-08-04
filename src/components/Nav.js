@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from '@reach/router';
+import { NavLink } from 'react-router-dom';
 
 import styled from 'styled-components/macro';
 import { theme, mixins, media } from '../styles';
@@ -36,7 +36,7 @@ const NavContainer = styled.nav`
   }
 `;
 
-const NavTitle = styled(Link)`
+const NavTitle = styled(NavLink)`
   color: ${colors.grey};
   letter-spacing: 0.4rem;
   padding-top: 0.5rem;
@@ -75,13 +75,13 @@ const Nav = () => (
     <NavBar>
       <ul>
         <li>
-          <Link to="/works">Work</Link>
+          <NavLink to="/works">Works</NavLink>
         </li>
         <li>
-          <Link to="/bio">Bio</Link>
+          <NavLink to="/bio">Bio</NavLink>
         </li>
         <li>
-          <Link to="/contact">Contact</Link>
+          <NavLink to="/contact">Contact</NavLink>
         </li>
       </ul>
     </NavBar>

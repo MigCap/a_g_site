@@ -30,7 +30,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: ${fonts.primary};
     font-size: ${fontSizes.base};
     background-color: ${colors.white};
-    color: ${colors.white};
+    color: ${colors.grey};
   }
   h1, h2, h3, h4, h5, h6 {
     letter-spacing: -.025em;
