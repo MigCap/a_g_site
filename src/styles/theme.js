@@ -13,7 +13,7 @@ const theme = {
   },
 
   fonts: {
-    primary: 'Arial Black, Arial Bold, sans-serif',
+    primary: '"Arial", sans-serif',
     secondary:
       'Circular Std, system, -apple-system, BlinkMacSystemFont, sans-serif',
   },

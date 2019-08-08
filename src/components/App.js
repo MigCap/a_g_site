@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 //import { Router } from '@reach/router';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { createBrowserHistory } from 'history';
 
 import ScrollToTop from '../utils/ScrollToTop';
 
@@ -28,28 +27,40 @@ const SiteWrapper = styled.div`
   `};
 `;
 
-const history = createBrowserHistory();
+const App = () => {
+  const [worksModalIsOpen, setWorksModalIsOpen] = useState(false);
 
-const App = () => (
-  <AppContainer>
-    <GlobalStyle />
+  return (
+    <AppContainer>
+      <GlobalStyle />
 
-    <SiteWrapper>
-      <Router>
-        <Nav />
+      <SiteWrapper>
+        <Router>
+          <Nav worksModalIsOpen={worksModalIsOpen} />
 
-        <ScrollToTop>
-          <Switch>
-            <Route path="/" exact component={Home} />
-            <Route exact path="/works" component={Works} />
-            <Route component={Bio} exact path="/bio" />
-            <Route component={Contact} exact path="/contact" />
-            <Route component={NoMatch} />
-          </Switch>
-        </ScrollToTop>
-      </Router>
-    </SiteWrapper>
-  </AppContainer>
-);
+          <ScrollToTop>
+            <Switch>
+              <Route path="/" exact component={Home} />
+              <Route
+                exact
+                path="/works"
+                render={props => (
+                  <Works
+                    {...props}
+                    worksModalIsOpen={worksModalIsOpen}
+                    setWorksModalIsOpen={setWorksModalIsOpen}
+                  />
+                )}
+              />
+              <Route exact path="/bio" component={Bio} />
+              <Route exact path="/contact" component={Contact} />
+              <Route component={NoMatch} />
+            </Switch>
+          </ScrollToTop>
+        </Router>
+      </SiteWrapper>
+    </AppContainer>
+  );
+};
 
 export default App;
