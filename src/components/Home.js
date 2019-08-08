@@ -1,8 +1,9 @@
 import React from 'react';
 
 import styled from 'styled-components/macro';
-import { theme, mixins, media, Main } from '../styles';
-const { colors } = theme;
+import { theme } from '../styles';
+
+// const { colors } = theme;
 
 const MainHome = styled.main`
   max-height: calc(100vh - ${theme.navHeight});

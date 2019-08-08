@@ -56,7 +56,7 @@ const GlobalStyle = createGlobalStyle`
     cursor: pointer;
   }
   img {
-    width: 100%;
+    /* width: 100%; */
     max-width: 100%;
     vertical-align: middle;
   }
@@ -83,14 +83,14 @@ const GlobalStyle = createGlobalStyle`
     font-family: ${fonts.primary};
     font-size: ${fontSizes.base};
     font-weight: 700;
-    border-radius: 50px;
+    /* border-radius: 50px; */
     border: 0;
-    padding: 10px 20px;
+    /* padding: 10px 20px; */
     cursor: pointer;
     transition: ${theme.transition};
     &:hover,
     &:focus {
-      color: ${colors.white};
+      /* color: ${colors.white}; */
       outline: 0;
     }
   }
