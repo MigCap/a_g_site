@@ -12,7 +12,7 @@ import Footer from './Footer';
 
 const { colors } = theme;
 
-const Works = ({ worksModalIsOpen, setWorksModalIsOpen, ...rest }) => {
+const Works = ({ worksModalIsOpen, setWorksModalIsOpen }) => {
   const Title = styled.h1`
     font-size: 0.7rem;
     font-weight: 500;
@@ -53,6 +53,10 @@ const Works = ({ worksModalIsOpen, setWorksModalIsOpen, ...rest }) => {
   const ImgButton = styled.button`
     padding: 0;
     background-color: transparent;
+    &:hover {
+      ${theme.transition};
+      transform: translateY(-5px);
+    }
   `;
 
   const Img = styled.img`
