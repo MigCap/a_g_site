@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-//import { Router } from '@reach/router';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import ScrollToTop from '../utils/ScrollToTop';
@@ -12,8 +11,7 @@ import Contact from './Contact';
 import NoMatch from './NoMatch';
 
 import styled from 'styled-components/macro';
-import { GlobalStyle } from '../styles';
-import { theme, media } from '../styles';
+import { GlobalStyle, theme, media } from '../styles';
 
 const AppContainer = styled.div`
   height: 100%;
@@ -23,7 +21,7 @@ const AppContainer = styled.div`
 const SiteWrapper = styled.div`
   padding-top: calc(${theme.navHeight} + 1.5rem);
   ${media.tablet`
-    padding-top: calc(${theme.navHeight} + 1.5rem);
+    padding-top: calc(${theme.navHeight} + 0.5rem);
   `};
 `;
 
