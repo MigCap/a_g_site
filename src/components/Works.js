@@ -1,17 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 // import PropTypes from 'prop-types';
+import useNativeLazyLoading from '@charlietango/use-native-lazy-loading';
+import { useInView, InView } from 'react-intersection-observer';
 
 import styled from 'styled-components/macro';
 import { theme, media, Main } from '../styles';
 import { momentumImages, leadImages } from '../constants/images';
 
 import Carousel, { Modal, ModalGateway } from 'react-images';
+import Footer from './Footer';
 
 const { colors } = theme;
 
-const Works = ({ worksModalIsOpen, setWorksModalIsOpen }) => {
+const Works = ({ worksModalIsOpen, setWorksModalIsOpen, ...rest }) => {
   const Title = styled.h1`
-    font-size: 0.9em;
+    font-size: 0.7rem;
+    font-weight: 500;
     margin: 3rem 0;
     border-bottom: solid 1px ${colors.lightestGrey};
     ${media.desktop`
@@ -27,22 +31,16 @@ const Works = ({ worksModalIsOpen, setWorksModalIsOpen }) => {
 
   const GalleryWrapper = styled.div`
     display: grid;
-    grid-gap: 20px;
+    grid-gap: 30px;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    .showImgs {
-      display: grid;
-    }
-    .hideImgs {
-      display: none;
-    }
     ${media.tiny`
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       `};
     ${media.phablet`
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       `};
     ${media.netbook`
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       `};
   `;
 
@@ -62,69 +60,40 @@ const Works = ({ worksModalIsOpen, setWorksModalIsOpen }) => {
   `;
 
   const customStylesLightBox = {
-    container: (base, state) => {
-      const log = base;
-      // console.log(base);
-      return {
-        minHeight: '100vh',
-        backgroundColor: 'white !important',
-      };
-    },
-    header: (base, state) => {
-      const log = base;
-      // console.log(base);
-
-      return {
-        ...base,
-        background: 'none !important',
-      };
-    },
-    headerClose: base => {
-      const log = base;
-      // console.log(base);
-      return {
-        ...base,
-        color: `${colors.lightGrey}`,
-        '&:hover': { color: `${colors.grey}` },
-      };
-    },
-    headerFullscreen: base => {
-      const log = base;
-      // console.log(base);
-      return {
-        ...base,
-        color: `${colors.lightGrey}`,
-        '&:hover': { color: `${colors.grey}` },
-      };
-    },
-    view: (base, state) => {
-      const log = base;
-      // console.log(base);
-      return {
-        // none of react-images styles are passed to <View />
-        ...base,
-      };
-    },
-    navigationPrev: (base, state) => {
-      const log = base;
-      // console.log(base);
-      return {
-        ...base,
-        color: `${colors.lightGrey}`,
-        background: 'rgba(199, 196, 196, 0.1)',
-        '&:hover': { color: `${colors.grey}` },
-      };
-    },
-    navigationNext: (base, state) => {
-      const log = base;
-      // console.log(base);
-      return {
-        ...base,
-        color: `${colors.lightGrey}`,
-        background: 'rgba(199, 196, 196, 0.1)',
-        '&:hover': { color: `${colors.grey}` },
-      };
-    },
+    container: (base, state) => ({
+      minHeight: '100vh',
+      backgroundColor: 'white !important',
+    }),
+    header: (base, state) => ({
+      ...base,
+      background: 'none !important',
+    }),
+    headerClose: base => ({
+      ...base,
+      color: `${colors.lightGrey}`,
+      '&:hover': { color: `${colors.grey}` },
+    }),
+    headerFullscreen: base => ({
+      ...base,
+      color: `${colors.lightGrey}`,
+      '&:hover': { color: `${colors.grey}` },
+    }),
+    view: (base, state) => ({
+      // none of react-images styles are passed to <View />
+      ...base,
+    }),
+    navigationPrev: (base, state) => ({
+      ...base,
+      color: `${colors.lightGrey}`,
+      background: 'rgba(199, 196, 196, 0.1)',
+      '&:hover': { color: `${colors.grey}` },
+    }),
+    navigationNext: (base, state) => ({
+      ...base,
+      color: `${colors.lightGrey}`,
+      background: 'rgba(199, 196, 196, 0.1)',
+      '&:hover': { color: `${colors.grey}` },
+    }),
     footer: (base, state) => {
       const opacity = state.interactionIsIdle ? 0 : 1;
       const transition = 'opacity 300ms';
@@ -134,22 +103,15 @@ const Works = ({ worksModalIsOpen, setWorksModalIsOpen }) => {
         opacity,
         transition,
         justifyContent: 'center',
-        background: 'none !important',
+        background: 'white !important',
       };
     },
-    footerCaption: (base, state) => {
-      const log = base;
-      // console.log(base);
-
-      return { ...base, color: `${colors.grey}` };
-    },
+    footerCaption: (base, state) => ({ ...base, color: `${colors.grey}` }),
     footerCount: (base, state) => ({ display: 'none' }),
   };
 
   const ModalFooterCaption = ({ innerProps, currentView, currentIndex }) => {
-    // console.log(currentView);
     const caption = currentView.caption;
-    // console.log(caption);
     const startString = caption.substr(0, caption.indexOf('-'));
     const endString = caption.substr(caption.indexOf('-'), caption.length);
 
@@ -172,72 +134,93 @@ const Works = ({ worksModalIsOpen, setWorksModalIsOpen }) => {
     setWorksModalIsOpen(worksModalIsOpen => !worksModalIsOpen);
   };
 
+  const supportsNativeLoading = useNativeLazyLoading();
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    margin: '200px 0px',
+  });
+
   return (
-    <Main>
-      <Title>Momentum</Title>
+    <Fragment>
+      <Main>
+        <Title>Momentum</Title>
 
-      <GalleryWrapper id="gallery-wrapper">
-        {momentumImages &&
-          momentumImages.map(({ src, alt }, index) => (
-            <ImgWrapper key={index.toString()}>
-              <ImgButton
-                onClick={() => {
-                  setMomentumIndex(index);
-                  setLeadIndex(0);
-                  setIsMomentum(true);
-                  setIsLead(false);
-                  setWorksModalIsOpen(true);
-                }}>
-                <Img src={src} alt={alt} />
-              </ImgButton>
-            </ImgWrapper>
-          ))}
-      </GalleryWrapper>
+        <GalleryWrapper id="gallery-wrapper">
+          {momentumImages &&
+            momentumImages.map(({ src, alt }, index) => (
+              <ImgWrapper key={index.toString()}>
+                <ImgButton
+                  onClick={() => {
+                    setMomentumIndex(index);
+                    setLeadIndex(0);
+                    setIsMomentum(true);
+                    setIsLead(false);
+                    setWorksModalIsOpen(true);
+                  }}>
+                  <Img
+                    width="100%"
+                    height="100%"
+                    src={src}
+                    alt={alt}
+                    index={index}
+                  />
+                </ImgButton>
+              </ImgWrapper>
+            ))}
+        </GalleryWrapper>
 
-      <br />
-      <br />
-      <br />
-      <br />
-      <Title>Lead</Title>
+        <br />
+        <br />
+        <br />
+        <br />
+        <Title>Lead</Title>
 
-      <GalleryWrapper id="gallery-wrapper2">
-        {leadImages &&
-          leadImages.map(({ src, alt }, index) => (
-            <ImgWrapper key={index.toString()}>
-              <ImgButton
-                onClick={() => {
-                  setMomentumIndex(0);
-                  setLeadIndex(index);
-                  setIsMomentum(false);
-                  setIsLead(true);
-                  setWorksModalIsOpen(true);
-                }}>
-                <Img src={src} alt={alt} index={index} />
-              </ImgButton>
-            </ImgWrapper>
-          ))}
-      </GalleryWrapper>
+        <GalleryWrapper id="gallery-wrapper2">
+          {leadImages &&
+            leadImages.map(({ src, alt }, index) => (
+              <ImgWrapper key={index.toString()}>
+                <ImgButton
+                  onClick={() => {
+                    setMomentumIndex(0);
+                    setLeadIndex(index);
+                    setIsMomentum(false);
+                    setIsLead(true);
+                    setWorksModalIsOpen(true);
+                  }}>
+                  <Img
+                    width="100%"
+                    height="100%"
+                    src={src}
+                    alt={alt}
+                    index={index}
+                  />
+                </ImgButton>
+              </ImgWrapper>
+            ))}
+        </GalleryWrapper>
 
-      <ModalGateway>
-        {worksModalIsOpen ? (
-          <Modal
-            onClose={toogleModal}
-            allowFullscreen={true}
-            closeOnBackdropClick={true}>
-            <Carousel
-              styles={customStylesLightBox}
-              views={isMomentum ? momentumImages : leadImages}
-              currentIndex={isMomentum ? momentumIndex : leadIndex}
-              hideControlsWhenIdleNumber={100}
-              trackPropsObject={{ infinite: true }}
-              components={{
-                FooterCaption: ModalFooterCaption,
-              }}
-            />
-          </Modal>
-        ) : null}
-      </ModalGateway>
-    </Main>
+        <ModalGateway>
+          {worksModalIsOpen ? (
+            <Modal
+              onClose={toogleModal}
+              allowFullscreen={true}
+              closeOnBackdropClick={true}>
+              <Carousel
+                styles={customStylesLightBox}
+                views={isMomentum ? momentumImages : leadImages}
+                currentIndex={isMomentum ? momentumIndex : leadIndex}
+                hideControlsWhenIdleNumber={100}
+                trackPropsObject={{ infinite: true }}
+                components={{
+                  FooterCaption: ModalFooterCaption,
+                }}
+              />
+            </Modal>
+          ) : null}
+        </ModalGateway>
+        <Footer />
+      </Main>
+    </Fragment>
   );
 };
 

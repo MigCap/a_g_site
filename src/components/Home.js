@@ -1,9 +1,9 @@
 import React from 'react';
 
 import styled from 'styled-components/macro';
-import { theme } from '../styles';
+import { theme, media } from '../styles';
 
-// const { colors } = theme;
+const { colors } = theme;
 
 const MainHome = styled.main`
   max-height: calc(100vh - ${theme.navHeight});
@@ -24,6 +24,30 @@ const LandingImage = styled.img`
   max-height: 70vh;
 `;
 
+const Rights = styled.div`
+  text-align: center;
+  padding-top: 3rem;
+  font-size: 0.6rem;
+
+  ${media.desktop`
+  `};
+  ${media.tablet`
+  `};
+  ${media.phablet`
+    padding: 3rem 2rem 0 2rem;
+  `};
+
+  p {
+    color: ${colors.lightGrey};
+    a {
+      &:hover {
+        ${theme.transition};
+        color: ${colors.black};
+      }
+    }
+  }
+`;
+
 const Home = () => (
   <MainHome>
     <ImageWrapper>
@@ -32,6 +56,18 @@ const Home = () => (
         alt="Adam and Eve"
       />
     </ImageWrapper>
+    <Rights>
+      <p>
+        &copy; {new Date().getFullYear()} Alejandro Guijarro All Rights
+        Reserved. Designed & built by{' '}
+        <a
+          href="https://www.miguelcapellan.com"
+          target="_blank"
+          rel="noopener noreferrer">
+          MCV
+        </a>
+      </p>
+    </Rights>
   </MainHome>
 );
 

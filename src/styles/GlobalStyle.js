@@ -27,9 +27,9 @@ const GlobalStyle = createGlobalStyle`
     overflow-x: hidden;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
-    font-family: ${fonts.primary};
+    font-family: ${fonts.secondary};
     font-size: ${fontSizes.base};
-    background-color: ${colors.white};
+    background-color: white;
     color: ${colors.grey};
   }
   h1, h2, h3, h4, h5, h6 {

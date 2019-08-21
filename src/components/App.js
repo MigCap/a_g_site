@@ -40,7 +40,7 @@ const App = () => {
 
           <ScrollToTop>
             <Switch>
-              <Route path="/" exact component={Home} />
+              <Route exact path="/" component={Home} />
               <Route
                 exact
                 path="/works"

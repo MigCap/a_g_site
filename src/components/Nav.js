@@ -19,18 +19,25 @@ const Nav = ({ worksModalIsOpen }) => {
     top: 0;
     left: 0;
     color: ${colors.grey};
-    background-color: ${colors.white};
+    background-color: white;
     text-align: center;
     z-index: ${zIndex};
+
     ${media.tablet`
-    top: 0;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    min-height: ${theme.navHeight};
-    height: ${theme.navHeight};
-    flex-direction: row;
-  `};
+      top: 0;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      min-height: ${theme.navHeight};
+      height: ${theme.navHeight};
+      flex-direction: row;
+    `};
+
+    ${media.phablet`
+      font-size: 0.9rem;
+      height: calc(20px + 2.2rem);
+    `};
+
     & > * {
       width: 100%;
       ${media.tablet`
@@ -45,7 +52,7 @@ const Nav = ({ worksModalIsOpen }) => {
     padding-top: 0.5rem;
     text-align: center;
     font-family: Arial Black;
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 900;
     &:hover {
       ${theme.transition};
@@ -68,15 +75,21 @@ const Nav = ({ worksModalIsOpen }) => {
           padding: 0 10px;
         `};
         a {
-          font-size: 0.6rem;
-          font-weight: 100;
-          letter-spacing: 0.1rem;
+          color: ${colors.lightGrey};
+          font-size: 0.7rem;
+          font-weight: normal;
           ${media.tablet`
             font-size: 0.6rem;
           `};
+
+          &:hover {
+            ${theme.transition};
+            color: ${colors.black};
+          }
         }
         .active {
           font-weight: 900;
+          color: ${colors.black};
         }
       }
     }
