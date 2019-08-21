@@ -6,7 +6,7 @@ const theme = {
     navWhite: '#fafafa',
     black: '#181818',
     white: '#fafafa',
-    lightestGrey: '#b3b3b3',
+    lightestGrey: '#ddd',
     lightGrey: '#9B9B9B',
     grey: '#404040',
     darkGrey: '#282828',
@@ -15,7 +15,7 @@ const theme = {
   fonts: {
     primary: '"Arial", sans-serif',
     secondary:
-      'Circular Std, system, -apple-system, BlinkMacSystemFont, sans-serif',
+      '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
   },
 
   fontSizes: {
