@@ -16,12 +16,20 @@ class Nav extends Component {
     this.state = {
       showNavBar: true,
       scrollPos: 0,
-      modalIsOpen: props.worksModalIsOpen,
+      modalIsOpen: false,
     };
   }
 
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll);
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.worksModalIsOpen !== prevProps.worksModalIsOpen) {
+      this.setState({
+        modalIsOpen: this.props.worksModalIsOpen,
+      });
+    }
   }
 
   componentWillUnmount() {
