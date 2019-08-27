@@ -380,3 +380,7 @@ export const leadImages = [
     caption: 'RX15088 (Mona Lisa) - Archival Pigment Print, 77 x 53 cm, 2016',
   },
 ];
+
+export const bioPic = {
+  src: '/static/images/Bio/2_alejandro-guijarro.jpg',
+};

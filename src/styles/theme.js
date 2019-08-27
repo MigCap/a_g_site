@@ -19,7 +19,7 @@ const theme = {
   },
 
   fontSizes: {
-    base: `16px`,
+    base: `14px`,
     xs: `12px`,
     sm: `14px`,
     md: `20px`,
