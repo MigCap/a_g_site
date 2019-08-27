@@ -116,20 +116,24 @@ const NavContainer = styled.nav`
   z-index: 1000;
 
   ${media.tablet`
-        top: 0;
-        bottom: 0;
-        right: 0;
-        width: 100%;
-        min-height: ${theme.navHeight};
-        height: ${theme.navHeight};
-        flex-direction: row;
-      `};
-
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    min-height: ${theme.navHeight};
+    height: ${theme.navHeight};
+    flex-direction: row;
+  `};
   ${media.phablet`
-        font-size: 0.9rem;
-        min-height: calc(70px);
-        height: calc(70px);
-      `};
+    font-size: 0.9rem;
+    min-height: calc(70px);
+    height: calc(70px);
+  `};
+  ${media.phone`
+    font-size: 0.9rem;
+    min-height: 80px;
+    height: 80px;
+  `};
 
   & > * {
     width: 100%;
@@ -182,9 +186,11 @@ const NavBar = styled.nav`
         ${media.tablet`
         font-size: 0.6rem;
       `};
-
         ${media.phablet`
         font-size: 0.5rem;
+      `};
+        ${media.phone`
+        font-size: 0.6rem;
       `};
 
         &:hover {

@@ -23,6 +23,9 @@ const SiteWrapper = styled.div`
   ${media.tablet`
     padding-top: calc(${theme.navHeight} + 0.5rem);
   `};
+  ${media.phone`
+  padding-top: 100px;
+  `};
 `;
 
 const App = () => {
