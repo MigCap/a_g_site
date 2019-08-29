@@ -4,6 +4,8 @@ import Footer from './Footer';
 import { bioPic } from '../constants/images';
 import { bioInfo } from '../constants/bio';
 
+import { getFirstWord, getRestOfString } from '../utils/various';
+
 import styled from 'styled-components/macro';
 import { Main, theme, media } from '../styles';
 const { colors } = theme;
@@ -73,6 +75,7 @@ const InfoTitle = styled.h1`
 `;
 
 const InfoYear = styled.h5`
+  color: ${colors.darkGrey};
   padding: 0.5rem 0;
   margin: 0;
 `;
@@ -83,6 +86,8 @@ const InfoLink = styled.a`
     color: ${colors.grey};
   }
 `;
+
+console.log(bioInfo);
 
 const Bio = () => (
   <Main>
@@ -118,16 +123,43 @@ const Bio = () => (
                   data.exhibitions.map((exhibition, index) => (
                     <p key={index.toString()}>{exhibition}</p>
                   ))}
-                <p>{!data.exhibitions && !data.text && data}</p>
+                {!data.exhibitions &&
+                  !data.text &&
+                  info.title !== 'AWARDS & GRANTS' && (
+                  <p>
+                    {getFirstWord(data)}
+                    {getRestOfString(data)}
+                  </p>
+                )}
+                {!data.exhibitions &&
+                  !data.text &&
+                  info.title === 'AWARDS & GRANTS' && (
+                  <p>
+                    <span style={{ color: 'black' }}>
+                      {getFirstWord(data)}
+                    </span>
+                    {getRestOfString(data)}
+                  </p>
+                )}
                 {data.text && data.src ? (
                   <InfoLink
                     href={data.src}
                     target="_blank"
                     rel="noreferrer noopener">
-                    <p>{data.text}</p>
+                    <p>
+                      <span style={{ color: 'black' }}>
+                        {getFirstWord(data.text)}
+                      </span>
+                      {getRestOfString(data.text)}
+                    </p>
                   </InfoLink>
                 ) : (
-                  <p>{data.text}</p>
+                  <p>
+                    <span style={{ color: 'black' }}>
+                      {getFirstWord(data.text)}
+                    </span>
+                    {getRestOfString(data.text)}
+                  </p>
                 )}
               </Fragment>
             ))}

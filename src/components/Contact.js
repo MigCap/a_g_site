@@ -14,8 +14,8 @@ const MainContact = styled.main`
   color: ${colors.lightGrey};
 
   ${media.phablet`
-      padding: 2rem 0.5rem 0 0.5rem;
-      `};
+      padding: 1rem 0.5rem 0 0.5rem;
+  `};
 
   p {
     padding: 0.5rem 0;
@@ -55,7 +55,7 @@ const Rights = styled.div`
     justify-self: center;
   `};
   ${media.phablet`
-    padding: 3rem 1rem 0 1rem;
+    padding: 1rem 1rem 0 1rem;
     font-size: 0.5rem;
   `};
 
@@ -73,29 +73,41 @@ const Rights = styled.div`
   }
 `;
 
+const PrarragraphStyled = styled.p`
+  padding-top: 10% !important;
+
+  ${media.phablet`
+    padding-top: 1%;
+  `};
+`;
+
+const LinkStyled = styled.a`
+  padding-bottom: 2%;
+  ${media.phablet`
+    padding-bottom: 2%;
+  `};
+`;
 const Contact = () => (
   <MainContact>
-    <hr style={{ width: '70%' }} />
-    {/* <p style={{ paddingTop: '10%', color: '#181818', fontWeight: 'bold' }}>
-      Contact:
-    </p> */}
-    <p style={{ paddingTop: '10%' }}>contact@alejandroguijarro.com</p>
-    <hr style={{ width: '80px' }} />
+    {/* <hr style={{ width: '70%' }} /> */}
+    <PrarragraphStyled>contact@alejandroguijarro.com</PrarragraphStyled>
+
+    {/* <hr style={{ width: '100px' }} /> */}
     <p style={{ color: '#181818', fontWeight: 'bold' }}>
       For sales and available works, please contact:
     </p>
     <p>Tristan Hoare: info@tristanhoare.com</p>
-    <hr style={{ width: '80px' }} />
-    <a
+
+    {/* <hr style={{ width: '100px' }} /> */}
+    <LinkStyled
       href="https://www.instagram.com/alejandroguijarrostudio/"
       target="_blank"
-      rel="noopener noreferrer"
-      style={{ paddingBottom: '10%' }}>
+      rel="noopener noreferrer">
       <IconInstagram />
       <p>Instagram</p>
-    </a>
+    </LinkStyled>
 
-    <hr style={{ width: '70%' }} />
+    {/* <hr style={{ width: '70%' }} /> */}
     <Rights>
       <p>
         &copy; {new Date().getFullYear()} Alejandro Guijarro All Rights

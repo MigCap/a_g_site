@@ -24,7 +24,7 @@ const SiteWrapper = styled.div`
     padding-top: calc(${theme.navHeight} + 0.5rem);
   `};
   ${media.phone`
-  padding-top: 100px;
+    padding-top: 80px;
   `};
 `;
 
