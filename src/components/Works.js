@@ -1,7 +1,7 @@
-import React, { Fragment, useState, useEffect } from 'react';
+import React, { Fragment, useState } from 'react';
 // import PropTypes from 'prop-types';
-import useNativeLazyLoading from '@charlietango/use-native-lazy-loading';
-import { useInView, InView } from 'react-intersection-observer';
+// import useNativeLazyLoading from '@charlietango/use-native-lazy-loading';
+// import { useInView, InView } from 'react-intersection-observer';
 
 import styled from 'styled-components/macro';
 import { theme, media, Main } from '../styles';
@@ -138,11 +138,11 @@ const Works = ({ worksModalIsOpen, setWorksModalIsOpen }) => {
     setWorksModalIsOpen(worksModalIsOpen => !worksModalIsOpen);
   };
 
-  const supportsNativeLoading = useNativeLazyLoading();
-  const [ref, inView] = useInView({
+  // const supportsNativeLoading = useNativeLazyLoading();
+  /* const [ref, inView] = useInView({
     triggerOnce: true,
     margin: '200px 0px',
-  });
+  }); */
 
   return (
     <Fragment>
