@@ -1,7 +1,7 @@
 import React from 'react';
 
 import styled from 'styled-components/macro';
-import { Main, theme, media } from '../styles';
+import { theme, media } from '../styles';
 
 import { IconInstagram } from './icons';
 
@@ -42,6 +42,39 @@ const MainContact = styled.main`
   }
 `;
 
+const PrarragraphStyled = styled.p`
+  padding-top: 10% !important;
+
+  ${media.phablet`
+    padding-top: 1%;
+  `};
+`;
+
+const LinkStyled = styled.a`
+  padding-bottom: 2%;
+
+  ${media.phablet`
+    padding-bottom: 2%;
+  `};
+  &:hover {
+    ${theme.transition};
+    p {
+      color: ${colors.black};
+    }
+    svg {
+      color: ${colors.black};
+    }
+  }
+
+  svg {
+    color: ${colors.lightGrey};
+  }
+
+  p {
+    color: ${colors.lightGrey};
+  }
+`;
+
 const Rights = styled.div`
   grid-area: rights;
   grid-column: 1 / span 3;
@@ -63,7 +96,7 @@ const Rights = styled.div`
     color: ${colors.lightGrey};
     padding: 0 5px;
     a {
-      font-size: 0.5rem;
+      font-size: 0.7rem;
       color: ${colors.lightGrey};
       &:hover {
         ${theme.transition};
@@ -73,20 +106,6 @@ const Rights = styled.div`
   }
 `;
 
-const PrarragraphStyled = styled.p`
-  padding-top: 10% !important;
-
-  ${media.phablet`
-    padding-top: 1%;
-  `};
-`;
-
-const LinkStyled = styled.a`
-  padding-bottom: 2%;
-  ${media.phablet`
-    padding-bottom: 2%;
-  `};
-`;
 const Contact = () => (
   <MainContact>
     {/* <hr style={{ width: '70%' }} /> */}
