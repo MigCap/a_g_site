@@ -3,9 +3,9 @@ import media from './media';
 
 const Main = styled.main`
   width: 100%;
-  margin: 0 auto;
   max-width: 1500px;
   min-height: 100vh;
+  margin: 0 auto;
   padding: 100px 90px;
   ${media.desktop`
     padding: 70px 60px;

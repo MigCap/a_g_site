@@ -148,7 +148,6 @@ const NavTitle = styled(NavLink)`
   letter-spacing: 0.4rem;
   padding-top: 0.5rem;
   text-align: center;
-  font-family: Arial Black;
   font-size: 0.9rem;
   font-weight: 900;
   &:hover {

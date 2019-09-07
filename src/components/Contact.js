@@ -115,7 +115,7 @@ const Contact = () => (
     <p style={{ color: '#181818', fontWeight: 'bold' }}>
       For sales and available works, please contact:
     </p>
-    <p>Tristan Hoare: info@tristanhoare.com</p>
+    <p>alejandroguijarro@googlemail.com</p>
 
     {/* <hr style={{ width: '100px' }} /> */}
     <LinkStyled
