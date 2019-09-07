@@ -87,8 +87,6 @@ const InfoLink = styled.a`
   }
 `;
 
-console.log(bioInfo);
-
 const Bio = () => (
   <Main>
     <BioWrap>

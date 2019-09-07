@@ -138,12 +138,6 @@ const Works = ({ worksModalIsOpen, setWorksModalIsOpen }) => {
     setWorksModalIsOpen(worksModalIsOpen => !worksModalIsOpen);
   };
 
-  // const supportsNativeLoading = useNativeLazyLoading();
-  /* const [ref, inView] = useInView({
-    triggerOnce: true,
-    margin: '200px 0px',
-  }); */
-
   return (
     <Fragment>
       <Main>
@@ -208,16 +202,18 @@ const Works = ({ worksModalIsOpen, setWorksModalIsOpen }) => {
             <Modal
               onClose={toogleModal}
               allowFullscreen={true}
-              closeOnBackdropClick={true}>
+              closeOnBackdropClick={true}
+              closeOnEsc={true}>
               <Carousel
-                styles={customStylesLightBox}
-                views={isMomentum ? momentumImages : leadImages}
-                currentIndex={isMomentum ? momentumIndex : leadIndex}
-                hideControlsWhenIdleNumber={100}
-                trackPropsObject={{ infinite: true }}
                 components={{
                   FooterCaption: ModalFooterCaption,
                 }}
+                currentIndex={isMomentum ? momentumIndex : leadIndex}
+                views={isMomentum ? momentumImages : leadImages}
+                hideControlsWhenIdle={500}
+                trackProps={{ infinite: true }}
+                frameProps={{ accessibility: true }}
+                styles={customStylesLightBox}
               />
             </Modal>
           ) : null}
@@ -229,8 +225,3 @@ const Works = ({ worksModalIsOpen, setWorksModalIsOpen }) => {
 };
 
 export default Works;
-
-/* Works.PropTypes = {
-  setModalIsOpen: PropTypes.func,
-  modalIsOpen: PropTypes.bool,
-}; */
