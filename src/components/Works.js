@@ -5,7 +5,11 @@ import React, { Fragment, useState } from 'react';
 
 import styled from 'styled-components/macro';
 import { theme, media, Main } from '../styles';
-import { momentumImages, leadImages } from '../constants/images';
+import {
+  momentumImages,
+  leadImages,
+  timeLinesImages,
+} from '../constants/images';
 
 import Carousel, { Modal, ModalGateway } from 'react-images';
 import Footer from './Footer';
@@ -16,7 +20,7 @@ const Works = ({ worksModalIsOpen, setWorksModalIsOpen }) => {
   const Title = styled.h1`
     font-size: 0.7rem;
     font-weight: 500;
-    margin: 3rem 0;
+    margin: 2rem 0 3rem 0;
     border-bottom: solid 1px ${colors.lightestGrey};
     ${media.desktop`
         margin: 0 0 1rem 0;
@@ -107,7 +111,7 @@ const Works = ({ worksModalIsOpen, setWorksModalIsOpen }) => {
         opacity,
         transition,
         justifyContent: 'center',
-        background: 'white !important',
+        background: 'rgba(255, 255, 255, 0.6) !important',
       };
     },
     footerCaption: (base, state) => ({ ...base, color: `${colors.grey}` }),
@@ -120,7 +124,8 @@ const Works = ({ worksModalIsOpen, setWorksModalIsOpen }) => {
     const endString = caption.substr(caption.indexOf('-'), caption.length);
 
     return (
-      <div style={{ color: `${colors.grey}`, paddingTop: '10px' }}>
+      <div
+        style={{ color: `${colors.grey}`, paddingTop: '10px', opacity: '0.5' }}>
         <p>
           <strong>{startString}</strong>
           {endString}
@@ -131,11 +136,33 @@ const Works = ({ worksModalIsOpen, setWorksModalIsOpen }) => {
 
   const [momentumIndex, setMomentumIndex] = useState(0);
   const [leadIndex, setLeadIndex] = useState(0);
+  const [timeLinesIndex, setTimeLinesIndex] = useState(0);
   const [isMomentum, setIsMomentum] = useState(false);
   const [isLead, setIsLead] = useState(false);
+  const [isTimeLines, setIsTimeLines] = useState(false);
 
   const toogleModal = () => {
     setWorksModalIsOpen(worksModalIsOpen => !worksModalIsOpen);
+  };
+
+  const setIndex = () => {
+    if (isMomentum) {
+      return momentumIndex;
+    }
+    if (isLead) {
+      return leadIndex;
+    }
+    return timeLinesIndex;
+  };
+
+  const setViews = () => {
+    if (isMomentum) {
+      return momentumImages;
+    }
+    if (isLead) {
+      return leadImages;
+    }
+    return timeLinesImages;
   };
 
   return (
@@ -197,6 +224,38 @@ const Works = ({ worksModalIsOpen, setWorksModalIsOpen }) => {
             ))}
         </GalleryWrapper>
 
+        <br />
+        <br />
+        <br />
+        <br />
+        <Title>Time Lines</Title>
+
+        <GalleryWrapper id="gallery-wrapper3">
+          {timeLinesImages &&
+            timeLinesImages.map(({ src, alt }, index) => (
+              <ImgWrapper key={index.toString()}>
+                <ImgButton
+                  onClick={() => {
+                    setMomentumIndex(0);
+                    setLeadIndex(0);
+                    setTimeLinesIndex(index);
+                    setIsMomentum(false);
+                    setIsLead(false);
+                    setIsTimeLines(true);
+                    setWorksModalIsOpen(true);
+                  }}>
+                  <Img
+                    width="100%"
+                    height="100%"
+                    src={src}
+                    alt={alt}
+                    index={index}
+                  />
+                </ImgButton>
+              </ImgWrapper>
+            ))}
+        </GalleryWrapper>
+
         <ModalGateway>
           {worksModalIsOpen ? (
             <Modal
@@ -208,9 +267,9 @@ const Works = ({ worksModalIsOpen, setWorksModalIsOpen }) => {
                 components={{
                   FooterCaption: ModalFooterCaption,
                 }}
-                currentIndex={isMomentum ? momentumIndex : leadIndex}
-                views={isMomentum ? momentumImages : leadImages}
-                hideControlsWhenIdle={500}
+                currentIndex={setIndex()}
+                views={setViews()}
+                hideControlsWhenIdle={1000}
                 trackProps={{ infinite: true }}
                 frameProps={{ accessibility: true }}
                 styles={customStylesLightBox}

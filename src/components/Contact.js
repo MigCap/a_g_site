@@ -18,7 +18,7 @@ const MainContact = styled.main`
   `};
 
   p {
-    padding: 0.5rem 0;
+    padding: 0;
   }
 
   a {
@@ -43,8 +43,6 @@ const MainContact = styled.main`
 `;
 
 const PrarragraphStyled = styled.p`
-  padding-top: 10% !important;
-
   ${media.phablet`
     padding-top: 1%;
   `};
@@ -75,6 +73,10 @@ const LinkStyled = styled.a`
   }
 `;
 
+const SectionTristan = styled.div`
+  padding-top: 20px;
+`;
+
 const Rights = styled.div`
   grid-area: rights;
   grid-column: 1 / span 3;
@@ -89,7 +91,7 @@ const Rights = styled.div`
   `};
   ${media.phablet`
     padding: 1rem 1rem 0 1rem;
-    font-size: 0.5rem;
+    /* font-size: 0.5rem; */
   `};
 
   p {
@@ -109,15 +111,8 @@ const Rights = styled.div`
 const Contact = () => (
   <MainContact>
     {/* <hr style={{ width: '70%' }} /> */}
+    <p style={{ color: '#181818', fontWeight: 'bold' }}>Studio</p>
     <PrarragraphStyled>contact@alejandroguijarro.com</PrarragraphStyled>
-
-    {/* <hr style={{ width: '100px' }} /> */}
-    <p style={{ color: '#181818', fontWeight: 'bold' }}>
-      For sales and available works, please contact:
-    </p>
-    <p>alejandroguijarro@googlemail.com</p>
-
-    {/* <hr style={{ width: '100px' }} /> */}
     <LinkStyled
       href="https://www.instagram.com/alejandroguijarrostudio/"
       target="_blank"
@@ -125,6 +120,18 @@ const Contact = () => (
       <IconInstagram />
       <p>Instagram</p>
     </LinkStyled>
+
+    <SectionTristan>
+      <p style={{ color: '#181818', fontWeight: 'bold' }}>
+        Gallery Representation
+      </p>
+      <p>Tristan Hoare Gallery</p>
+      <p>6 Fitzroy Square, London W1T 5HJ</p>
+      <p>+44 (0)20 7383 4484</p>
+      <p>info@tristanhoare.co.uk</p>
+    </SectionTristan>
+
+    {/* <hr style={{ width: '100px' }} /> */}
 
     {/* <hr style={{ width: '70%' }} /> */}
     <Rights>

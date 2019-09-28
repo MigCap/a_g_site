@@ -28,6 +28,7 @@ const FooterContainer = styled.section`
   z-index: 100;
   border-top: solid 0.5px ${colors.lightestGrey};
   margin-top: 50px;
+  padding-top: 20px;
 
   ${media.desktop`
     padding: 1rem 0 5rem 0;
