@@ -1,5 +1,6 @@
 const URL_MOMENTUM = '/static/images/Momentum';
 const URL_LEAD = '/static/images/Lead';
+const URL_TIMELINES = '/static/images/TimeLines';
 
 export const momentumImages = [
   {
@@ -378,6 +379,105 @@ export const leadImages = [
     alt: 'Alejandro Guijarro - RX15088 (Mona Lisa)',
     thumbnail: '',
     caption: 'RX15088 (Mona Lisa) - Archival Pigment Print, 77 x 53 cm, 2016',
+  },
+];
+
+export const timeLinesImages = [
+  {
+    src: `${URL_TIMELINES}/1_30-Nov_33.jpg`,
+    width: 4,
+    height: 3,
+    alt: 'Alejandro Guijarro - 30 Noviembre 1933',
+    thumbnail: '',
+    caption: '30 Noviembre 1933 - Photogravure, 64 x 58 cm, 2019',
+  },
+  {
+    src: `${URL_TIMELINES}/2_30_Jun_34.jpg`,
+    width: 4,
+    height: 3,
+    alt: 'Alejandro Guijarro - 30 Junio 1934',
+    thumbnail: '',
+    caption: '30 Junio 1934 - Photogravure, 64 x 58 cm, 2019',
+  },
+  {
+    src: `${URL_TIMELINES}/3_31_Ago_35.jpg`,
+    width: 4,
+    height: 3,
+    alt: 'Alejandro Guijarro - 31 Agosto 1935',
+    thumbnail: '',
+    caption: '31 Agosto 1935 - Photogravure, 64 x 58 cm, 2019',
+  },
+  {
+    src: `${URL_TIMELINES}/4_1_Feb_36.jpg`,
+    width: 4,
+    height: 3,
+    alt: 'Alejandro Guijarro - 4 Febrero 1936',
+    thumbnail: '',
+    caption: '4 Febrero 1936 - Photogravure, 64 x 58 cm, 2019',
+  },
+  {
+    src: `${URL_TIMELINES}/21_1_abr_39.jpg`,
+    width: 4,
+    height: 3,
+    alt: 'Alejandro Guijarro - 1 abril 1939',
+    thumbnail: '',
+    caption: '1 abril 1939 - Photogravure, 64 x 58 cm, 2019',
+  },
+  {
+    src: `${URL_TIMELINES}/21_1_abr_39.jpg`,
+    width: 4,
+    height: 3,
+    alt: 'Alejandro Guijarro - 1 abril 1939',
+    thumbnail: '',
+    caption: '1 abril 1939 - Photogravure, 64 x 58 cm, 2019',
+  },
+  {
+    src: `${URL_TIMELINES}/21_1_abr_39.jpg`,
+    width: 4,
+    height: 3,
+    alt: 'Alejandro Guijarro - 1 abril 1939',
+    thumbnail: '',
+    caption: '1 abril 1939 - Photogravure, 64 x 58 cm, 2019',
+  },
+  {
+    src: `${URL_TIMELINES}/21_1_abr_39.jpg`,
+    width: 4,
+    height: 3,
+    alt: 'Alejandro Guijarro - 1 abril 1939',
+    thumbnail: '',
+    caption: '1 abril 1939 - Photogravure, 64 x 58 cm, 2019',
+  },
+  {
+    src: `${URL_TIMELINES}/21_1_abr_39.jpg`,
+    width: 4,
+    height: 3,
+    alt: 'Alejandro Guijarro - 1 abril 1939',
+    thumbnail: '',
+    caption: '1 abril 1939 - Photogravure, 64 x 58 cm, 2019',
+  },
+  {
+    src: `${URL_TIMELINES}/21_1_abr_39.jpg`,
+    width: 4,
+    height: 3,
+    alt: 'Alejandro Guijarro - 1 abril 1939',
+    thumbnail: '',
+    caption: '1 abril 1939 - Photogravure, 64 x 58 cm, 2019',
+  },
+  {
+    src: `${URL_TIMELINES}/21_1_abr_39.jpg`,
+    width: 4,
+    height: 3,
+    alt: 'Alejandro Guijarro - 1 abril 1939',
+    thumbnail: '',
+    caption: '1 abril 1939 - Photogravure, 64 x 58 cm, 2019',
+  },
+  {
+    src: `${URL_TIMELINES}/21_1_abr_39.jpg`,
+    width: 4,
+    height: 3,
+    alt: 'Alejandro Guijarro - 1 Abril 1939',
+    thumbnail: '',
+    caption: '1 Abril 1939 - Photogravure, 64 x 58 cm, 2019',
   },
 ];
 

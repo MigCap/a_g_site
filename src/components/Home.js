@@ -53,7 +53,7 @@ const Home = () => (
     <ImageWrapper>
       <LandingImage
         src="/static/images/Lead/P01692a00xf2006 (Adam and Eve).jpg"
-        alt="Adam and Eve"
+        alt="Alejandro Gujarro - Adam and Eve"
       />
     </ImageWrapper>
     <Rights>
