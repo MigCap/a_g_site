@@ -38,14 +38,15 @@ const Works = ({ worksModalIsOpen, setWorksModalIsOpen }) => {
     grid-gap: 30px;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     ${media.tiny`
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      `};
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    `};
     ${media.phablet`
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      `};
+    `};
     ${media.netbook`
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      `};
+      padding-bottom: 90px;
+    `};
   `;
 
   const ImgWrapper = styled.div`
@@ -69,7 +70,10 @@ const Works = ({ worksModalIsOpen, setWorksModalIsOpen }) => {
 
   const customStylesLightBox = {
     container: (base, state) => ({
+      minWidth: '100vw',
       minHeight: '100vh',
+      display: 'flex !important',
+      alignItems: 'center',
       backgroundColor: 'white !important',
     }),
     header: (base, state) => ({
@@ -86,10 +90,12 @@ const Works = ({ worksModalIsOpen, setWorksModalIsOpen }) => {
       color: `${colors.lightGrey}`,
       '&:hover': { color: `${colors.grey}` },
     }),
-    view: (base, state) => ({
-      // none of react-images styles are passed to <View />
-      ...base,
-    }),
+    view: (base, state) =>
+      //console.log(state);
+      ({
+        // none of react-images styles are passed to <View />
+        ...base,
+      }),
     navigationPrev: (base, state) => ({
       ...base,
       color: `${colors.lightGrey}`,
@@ -124,8 +130,7 @@ const Works = ({ worksModalIsOpen, setWorksModalIsOpen }) => {
     const endString = caption.substr(caption.indexOf('-'), caption.length);
 
     return (
-      <div
-        style={{ color: `${colors.grey}`, paddingTop: '10px', opacity: '0.5' }}>
+      <div style={{ color: `${colors.grey}`, paddingTop: '10px' }}>
         <p>
           <strong>{startString}</strong>
           {endString}
@@ -172,20 +177,22 @@ const Works = ({ worksModalIsOpen, setWorksModalIsOpen }) => {
 
         <GalleryWrapper id="gallery-wrapper">
           {momentumImages &&
-            momentumImages.map(({ src, alt }, index) => (
+            momentumImages.map(({ alt, source }, index) => (
               <ImgWrapper key={index.toString()}>
                 <ImgButton
                   onClick={() => {
                     setMomentumIndex(index);
                     setLeadIndex(0);
+                    setTimeLinesIndex(0);
                     setIsMomentum(true);
                     setIsLead(false);
+                    setIsTimeLines(false);
                     setWorksModalIsOpen(true);
                   }}>
                   <Img
                     width="100%"
                     height="100%"
-                    src={src}
+                    src={source.thumbnail}
                     alt={alt}
                     index={index}
                   />
@@ -194,28 +201,26 @@ const Works = ({ worksModalIsOpen, setWorksModalIsOpen }) => {
             ))}
         </GalleryWrapper>
 
-        <br />
-        <br />
-        <br />
-        <br />
         <Title>Lead</Title>
 
         <GalleryWrapper id="gallery-wrapper2">
           {leadImages &&
-            leadImages.map(({ src, alt }, index) => (
+            leadImages.map(({ alt, source }, index) => (
               <ImgWrapper key={index.toString()}>
                 <ImgButton
                   onClick={() => {
                     setMomentumIndex(0);
                     setLeadIndex(index);
+                    setTimeLinesIndex(0);
                     setIsMomentum(false);
                     setIsLead(true);
+                    setIsTimeLines(false);
                     setWorksModalIsOpen(true);
                   }}>
                   <Img
                     width="100%"
                     height="100%"
-                    src={src}
+                    src={source.thumbnail}
                     alt={alt}
                     index={index}
                   />
@@ -224,15 +229,11 @@ const Works = ({ worksModalIsOpen, setWorksModalIsOpen }) => {
             ))}
         </GalleryWrapper>
 
-        <br />
-        <br />
-        <br />
-        <br />
         <Title>Time Lines</Title>
 
         <GalleryWrapper id="gallery-wrapper3">
           {timeLinesImages &&
-            timeLinesImages.map(({ src, alt }, index) => (
+            timeLinesImages.map(({ alt, source }, index) => (
               <ImgWrapper key={index.toString()}>
                 <ImgButton
                   onClick={() => {
@@ -247,7 +248,7 @@ const Works = ({ worksModalIsOpen, setWorksModalIsOpen }) => {
                   <Img
                     width="100%"
                     height="100%"
-                    src={src}
+                    src={source.thumbnail}
                     alt={alt}
                     index={index}
                   />
@@ -260,7 +261,7 @@ const Works = ({ worksModalIsOpen, setWorksModalIsOpen }) => {
           {worksModalIsOpen ? (
             <Modal
               onClose={toogleModal}
-              allowFullscreen={true}
+              allowFullscreen={false}
               closeOnBackdropClick={true}
               closeOnEsc={true}>
               <Carousel
@@ -269,7 +270,7 @@ const Works = ({ worksModalIsOpen, setWorksModalIsOpen }) => {
                 }}
                 currentIndex={setIndex()}
                 views={setViews()}
-                hideControlsWhenIdle={1000}
+                hideControlsWhenIdle={2000}
                 trackProps={{ infinite: true }}
                 frameProps={{ accessibility: true }}
                 styles={customStylesLightBox}

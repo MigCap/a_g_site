@@ -39,15 +39,27 @@ const FooterContainer = styled.section`
   ${media.phablet`
     padding: 1rem 0 4rem 0;
     grid-template-areas: 
-      "nav nav nav"
-      "instagram backToTop backToTop"
+      "instagram nav backToTop"
       "rights rights rights";
+  `};
+  ${media.tiny`
+    padding: 1rem 0 4rem 0;
+    grid-template-rows: auto 70px 20px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+      "nav nav"
+      "instagram backToTop"
+      "rights rights";
   `};
 `;
 
 const FooterSocialIcons = styled.div`
   grid-area: instagram;
   justify-self: start;
+  ${media.tiny`
+    justify-self: center;
+  `};
+
   a {
     padding: 0 5px;
     width: 1.2rem;
@@ -64,6 +76,9 @@ const FooterBackToTop = styled.div`
 
   ${media.phablet`
     justify-self: end;
+  `};
+  ${media.tiny`
+    justify-self: start;
   `};
 
   button {
@@ -84,8 +99,11 @@ const FooterNav = styled.nav`
   justify-self: end;
 
   ${media.phablet`
-    padding: 0 0 2rem 0;
     justify-self: center;
+  `};
+  ${media.tiny`
+    grid-row: 1;
+    grid-column: 1 / span 3;
   `};
 
   ul {
@@ -126,7 +144,7 @@ const Rights = styled.div`
   ${media.tablet`
     justify-self: center;
   `};
-  ${media.phablet`
+  ${media.tiny`
   `};
 
   p {

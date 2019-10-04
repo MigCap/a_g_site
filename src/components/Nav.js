@@ -105,8 +105,8 @@ const NavContainer = styled.nav`
   align-items: center;
   min-width: 100vw;
   width: 100vw;
-  min-height: ${theme.navHeight};
-  height: ${theme.navHeight};
+  min-height: calc(${theme.navHeight} + 30px);
+  height: calc(${theme.navHeight} + 30px);
   position: fixed;
   top: 0;
   left: 0;
@@ -126,13 +126,19 @@ const NavContainer = styled.nav`
   `};
   ${media.phablet`
     font-size: 0.9rem;
-    min-height: calc(70px);
-    height: calc(70px);
+    min-height: 90px;
+    height: 90px;
   `};
   ${media.phone`
     font-size: 0.9rem;
-    min-height: 80px;
-    height: 80px;
+    min-height: 90px;
+    height: 90px;
+  `};
+
+  ${media.tiny`
+    font-size: 0.9rem;
+    min-height: 100px;
+    height: 100px;
   `};
 
   & > * {
@@ -156,41 +162,55 @@ const NavTitle = styled(NavLink)`
   }
 
   ${media.tablet`
-  font-size: 0.9rem;
-`};
+    font-size: 0.9rem;
+  `};
 
   ${media.phablet`
-  font-size: 0.6rem;
-  padding: 0.5rem 0.3rem 0 0.3rem;
-  letter-spacing: 0.2rem;
-`};
+    font-size: 0.8rem;
+    padding: 0.5rem 0.3rem 0 0.3rem;
+    letter-spacing: 0.2rem;
+  `};
+
+  ${media.tiny`
+    font-size: 0.9rem;
+    padding: 1rem 0.3rem 0 0.3rem;
+    letter-spacing: 0.2rem;
+  `};
 `;
 
 const NavBar = styled.nav`
-  padding: 0 0 0.5rem 0;
+  ${media.tablet`
+    padding: 20px 10px;
+  `};
+  ${media.phablet`
+    padding: 20px 10px;
+  `};
+  ${media.tiny`
+    padding: 20px 10px;
+  `};
   ul {
     display: flex;
     flex-direction: row;
     justify-content: center;
     li {
-      padding: 0 10px;
-      ${media.tablet`
-        padding: 0 10px;
-      `};
+      padding: 0 10px 20px 10px;
+
       a {
         color: ${colors.lightGrey};
         font-size: 0.7rem;
         font-weight: normal;
 
         ${media.tablet`
-        font-size: 0.6rem;
-      `};
+          font-size: 0.8rem;
+        `};
+
         ${media.phablet`
-        font-size: 0.5rem;
-      `};
-        ${media.phone`
-        font-size: 0.6rem;
-      `};
+          font-size: 0.7rem;
+        `};
+
+        ${media.tiny`
+          font-size: 0.7rem;
+        `};
 
         &:hover {
           ${theme.transition};
