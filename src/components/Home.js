@@ -16,6 +16,9 @@ const ImageWrapper = styled.div`
   width: 100%;
   height: 80%;
   padding-top: auto;
+  ${media.tiny`
+  padding-top: 50px;
+  `};
 `;
 
 const LandingImage = styled.img`
@@ -29,10 +32,6 @@ const Rights = styled.div`
   padding-top: 3rem;
   font-size: 0.6rem;
 
-  ${media.desktop`
-  `};
-  ${media.tablet`
-  `};
   ${media.phablet`
     padding: 3rem 2rem 0 2rem;
   `};
@@ -59,7 +58,10 @@ const Home = () => (
     <Rights>
       <p>
         &copy; {new Date().getFullYear()} Alejandro Guijarro All Rights
-        Reserved. Designed & built by{' '}
+        Reserved.
+      </p>
+      <p>
+        Designed & built by{' '}
         <a
           href="https://www.miguelcapellan.com"
           target="_blank"
