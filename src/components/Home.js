@@ -51,7 +51,7 @@ const Home = () => (
   <MainHome>
     <ImageWrapper>
       <LandingImage
-        src="/static/images/Lead/P01692a00xf2006 (Adam and Eve).jpg"
+        src="/static/images/Lead/P01692a00xf2006_(Adam_and_Eve).jpg"
         alt="Alejandro Gujarro - Adam and Eve"
       />
     </ImageWrapper>
