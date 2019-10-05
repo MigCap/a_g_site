@@ -163,11 +163,19 @@ const NavTitle = styled(NavLink)`
 
   ${media.tablet`
     font-size: 0.9rem;
+    padding: 1rem 0.3rem 0 0.3rem;
+    letter-spacing: 0.2rem;
   `};
 
   ${media.phablet`
-    font-size: 0.8rem;
-    padding: 0.5rem 0.3rem 0 0.3rem;
+    font-size: 0.9rem;
+    padding: 1rem 0.3rem 0 0.3rem;
+    letter-spacing: 0.2rem;
+  `};
+
+  ${media.phone`
+    font-size: 0.9rem;
+    padding: 1rem 0.3rem 0 0.3rem;
     letter-spacing: 0.2rem;
   `};
 
@@ -201,7 +209,7 @@ const NavBar = styled.nav`
         font-weight: normal;
 
         ${media.tablet`
-          font-size: 0.8rem;
+          font-size: 0.7rem;
         `};
 
         ${media.phablet`
@@ -209,7 +217,7 @@ const NavBar = styled.nav`
         `};
 
         ${media.tiny`
-          font-size: 0.7rem;
+          font-size: 0.8rem;
         `};
 
         &:hover {
