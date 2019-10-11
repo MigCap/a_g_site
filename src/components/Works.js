@@ -1,7 +1,8 @@
 import React, { Fragment, useState } from 'react';
 // import PropTypes from 'prop-types';
-// import useNativeLazyLoading from '@charlietango/use-native-lazy-loading';
-// import { useInView, InView } from 'react-intersection-observer';
+import LazyLoad from 'react-lazyload';
+
+import LoaderPlaceholder from './LoaderPlaceholder';
 
 import styled from 'styled-components/macro';
 import { theme, media, Main } from '../styles';
@@ -16,7 +17,7 @@ import Footer from './Footer';
 
 const { colors } = theme;
 
-const Works = ({ worksModalIsOpen, setWorksModalIsOpen }) => {
+const Works = ({ worksModalIsOpen, setWorksModalIsOpen, ...rest }) => {
   const Title = styled.h1`
     font-size: 0.7rem;
     font-weight: 500;
@@ -53,6 +54,7 @@ const Works = ({ worksModalIsOpen, setWorksModalIsOpen }) => {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
   `;
 
   const ImgButton = styled.button`
@@ -177,27 +179,27 @@ const Works = ({ worksModalIsOpen, setWorksModalIsOpen }) => {
 
         <GalleryWrapper id="gallery-wrapper">
           {momentumImages &&
-            momentumImages.map(({ alt, source }, index) => (
-              <ImgWrapper key={index.toString()}>
-                <ImgButton
-                  onClick={() => {
-                    setMomentumIndex(index);
-                    setLeadIndex(0);
-                    setTimeLinesIndex(0);
-                    setIsMomentum(true);
-                    setIsLead(false);
-                    setIsTimeLines(false);
-                    setWorksModalIsOpen(true);
-                  }}>
-                  <Img
-                    width="100%"
-                    height="100%"
-                    src={source.thumbnail}
-                    alt={alt}
-                    index={index}
-                  />
-                </ImgButton>
-              </ImgWrapper>
+            momentumImages.map(({ alt, source, width, height }, index) => (
+              <LazyLoad
+                height={height}
+                offset={800}
+                once={true}
+                key={index.toString()}>
+                <ImgWrapper>
+                  <ImgButton
+                    onClick={() => {
+                      setMomentumIndex(index);
+                      setLeadIndex(0);
+                      setTimeLinesIndex(0);
+                      setIsMomentum(true);
+                      setIsLead(false);
+                      setIsTimeLines(false);
+                      setWorksModalIsOpen(true);
+                    }}>
+                    <Img src={source.thumbnail} alt={alt} index={index} />
+                  </ImgButton>
+                </ImgWrapper>
+              </LazyLoad>
             ))}
         </GalleryWrapper>
 
@@ -205,27 +207,34 @@ const Works = ({ worksModalIsOpen, setWorksModalIsOpen }) => {
 
         <GalleryWrapper id="gallery-wrapper2">
           {leadImages &&
-            leadImages.map(({ alt, source }, index) => (
-              <ImgWrapper key={index.toString()}>
-                <ImgButton
-                  onClick={() => {
-                    setMomentumIndex(0);
-                    setLeadIndex(index);
-                    setTimeLinesIndex(0);
-                    setIsMomentum(false);
-                    setIsLead(true);
-                    setIsTimeLines(false);
-                    setWorksModalIsOpen(true);
-                  }}>
-                  <Img
-                    width="100%"
-                    height="100%"
-                    src={source.thumbnail}
-                    alt={alt}
-                    index={index}
-                  />
-                </ImgButton>
-              </ImgWrapper>
+            leadImages.map(({ alt, source, height }, index) => (
+              <LazyLoad
+                height={height}
+                offset={800}
+                once={true}
+                key={index.toString()}>
+                <ImgWrapper>
+                  <ImgButton
+                    onClick={() => {
+                      setMomentumIndex(0);
+                      setLeadIndex(index);
+                      setTimeLinesIndex(0);
+                      setIsMomentum(false);
+                      setIsLead(true);
+                      setIsTimeLines(false);
+                      setWorksModalIsOpen(true);
+                    }}>
+                    <Img
+                      width="100%"
+                      height="100%"
+                      src={source.thumbnail}
+                      alt={alt}
+                      loading="lazy"
+                      index={index}
+                    />
+                  </ImgButton>
+                </ImgWrapper>
+              </LazyLoad>
             ))}
         </GalleryWrapper>
 
@@ -233,27 +242,33 @@ const Works = ({ worksModalIsOpen, setWorksModalIsOpen }) => {
 
         <GalleryWrapper id="gallery-wrapper3">
           {timeLinesImages &&
-            timeLinesImages.map(({ alt, source }, index) => (
-              <ImgWrapper key={index.toString()}>
-                <ImgButton
-                  onClick={() => {
-                    setMomentumIndex(0);
-                    setLeadIndex(0);
-                    setTimeLinesIndex(index);
-                    setIsMomentum(false);
-                    setIsLead(false);
-                    setIsTimeLines(true);
-                    setWorksModalIsOpen(true);
-                  }}>
-                  <Img
-                    width="100%"
-                    height="100%"
-                    src={source.thumbnail}
-                    alt={alt}
-                    index={index}
-                  />
-                </ImgButton>
-              </ImgWrapper>
+            timeLinesImages.map(({ alt, source, height }, index) => (
+              <LazyLoad
+                height={height}
+                offset={800}
+                once={true}
+                key={index.toString()}>
+                <ImgWrapper>
+                  <ImgButton
+                    onClick={() => {
+                      setMomentumIndex(0);
+                      setLeadIndex(0);
+                      setTimeLinesIndex(index);
+                      setIsMomentum(false);
+                      setIsLead(false);
+                      setIsTimeLines(true);
+                      setWorksModalIsOpen(true);
+                    }}>
+                    <Img
+                      width="100%"
+                      height="100%"
+                      src={source.thumbnail}
+                      alt={alt}
+                      index={index}
+                    />
+                  </ImgButton>
+                </ImgWrapper>
+              </LazyLoad>
             ))}
         </GalleryWrapper>
 
