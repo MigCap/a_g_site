@@ -2,8 +2,6 @@ import React, { Fragment, useState } from 'react';
 // import PropTypes from 'prop-types';
 import LazyLoad from 'react-lazyload';
 
-import LoaderPlaceholder from './LoaderPlaceholder';
-
 import styled from 'styled-components/macro';
 import { theme, media, Main } from '../styles';
 import {
