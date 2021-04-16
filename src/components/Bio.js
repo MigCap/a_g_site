@@ -10,7 +10,7 @@ import styled from 'styled-components/macro';
 import { Main, theme, media } from '../styles';
 const { colors } = theme;
 
-const BioWrap = styled.div`
+const BioWrap = styled.div `
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -91,11 +91,6 @@ const Bio = () => (
   <Main>
     <BioWrap>
       <div>
-        <p>
-          He graduated from the Royal College of Art in 2010 with a MA in
-          fineart art.
-        </p>
-
         <p>
           His work examines spatial relations in photographic representation,
           exploring what photography is still allowed and able to do. He makes
