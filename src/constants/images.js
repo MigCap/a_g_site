@@ -247,7 +247,8 @@ export const momentumImages = [{
     },
 ]
 
-export const leadImages = [{
+export const leadImages = [
+    {
         source: {
             regular: `${URL_LEAD}/P01692a00xf2006_(Adam_and_Eve).jpg`,
             thumbnail: `${URL_LEAD_THUMB}/P01692a00xf2006_(Adam_and_Eve)_thumb.jpg`,
@@ -255,7 +256,8 @@ export const leadImages = [{
         width: 3,
         height: 4,
         alt: 'Alejandro Guijarro - P01692a00xf2006 (Adam and Eve)',
-        caption: 'P01692a00xf2006 (Adam and Eve) - Archival Pigment Print, 242 x 184.5 cm, 2016',
+        caption:
+            'P01692a00xf2006 (Adam and Eve) - Archival Pigment Print, 242 x 184.5 cm, 2016',
     },
     {
         source: {
@@ -264,8 +266,10 @@ export const leadImages = [{
         },
         width: 3,
         height: 4,
-        alt: 'Alejandro Guijarro - P01180a00xf2011 (Prince Baltasar Carlos on Horseback)',
-        caption: 'P01180a00xf2011 (Prince Baltasar Carlos on Horseback) - Archival Pigment Print, 177 x 211 cm, 2016',
+        alt:
+            'Alejandro Guijarro - P01180a00xf2011 (Prince Baltasar Carlos on Horseback)',
+        caption:
+            'P01180a00xf2011 (Prince Baltasar Carlos on Horseback) - Archival Pigment Print, 177 x 211 cm, 2016',
     },
     {
         source: {
@@ -274,7 +278,8 @@ export const leadImages = [{
         },
         width: 16,
         height: 9,
-        alt: 'Alejandro Guijarro - Installation View, Tristan Hoare, London, 2017',
+        alt:
+            'Alejandro Guijarro - Installation View, Tristan Hoare, London, 2017',
         caption: 'Installation View - Tristan Hoare, London, 2017',
     },
     {
@@ -285,7 +290,8 @@ export const leadImages = [{
         width: 3,
         height: 4,
         alt: 'Alejandro Guijarro - 20769 (Descent from the cross)',
-        caption: '20769 (Descent from the cross) - Archival Pigment Print, 100 x 77 cm, 2016',
+        caption:
+            '20769 (Descent from the cross) - Archival Pigment Print, 100 x 77 cm, 2016',
     },
     {
         source: {
@@ -295,7 +301,8 @@ export const leadImages = [{
         width: 4,
         height: 4,
         alt: 'Alejandro Guijarro - 21600 (St Gregory the Great)',
-        caption: '21600 (St Gregory the Great) - Archival Pigment Print, 60 x 60 cm, 2016',
+        caption:
+            '21600 (St Gregory the Great) - Archival Pigment Print, 60 x 60 cm, 2016',
     },
     {
         source: {
@@ -305,7 +312,8 @@ export const leadImages = [{
         width: 4,
         height: 4,
         alt: 'Alejandro Guijarro - 15816 (St Gregory the Great)',
-        caption: '15816 (St Gregory the Great) - Archival Pigment Print, 60 x 60 cm, 2016',
+        caption:
+            '15816 (St Gregory the Great) - Archival Pigment Print, 60 x 60 cm, 2016',
     },
     {
         source: {
@@ -315,7 +323,8 @@ export const leadImages = [{
         width: 4,
         height: 4,
         alt: 'Alejandro Guijarro - 49757 (St Gregory the Great)',
-        caption: '49757 (St Gregory the Great) - Archival Pigment Print, 60 x 60 cm, 2016',
+        caption:
+            '49757 (St Gregory the Great) - Archival Pigment Print, 60 x 60 cm, 2016',
     },
     {
         source: {
@@ -325,7 +334,8 @@ export const leadImages = [{
         width: 16,
         height: 9,
         thumbnail: '',
-        caption: '57954 (Saint Pierre Released From Prison) - Archival Pigment Print, 48.5 x 64.5 cm, 2016',
+        caption:
+            '57954 (Saint Pierre Released From Prison) - Archival Pigment Print, 48.5 x 64.5 cm, 2016',
     },
     {
         source: {
@@ -335,7 +345,8 @@ export const leadImages = [{
         width: 3,
         height: 4,
         alt: 'Alejandro Guijarro - P01627a00xf2013 (Inmaculate Conception)',
-        caption: 'P01627a00xf2013 (Inmaculate Conception) - Archival Pigment Print, 200 x 134 cm, 2016',
+        caption:
+            'P01627a00xf2013 (Inmaculate Conception) - Archival Pigment Print, 200 x 134 cm, 2016',
     },
     {
         source: {
@@ -345,7 +356,8 @@ export const leadImages = [{
         width: 16,
         height: 9,
         alt: 'Alejandro Guijarro - 73813 (Siege of Beauvais in 1472)',
-        caption: '73813 (Siege of Beauvais in 1472) - Archival Pigment Print, 84 x 105 cm, 2016',
+        caption:
+            '73813 (Siege of Beauvais in 1472) - Archival Pigment Print, 84 x 105 cm, 2016',
     },
     {
         source: {
@@ -355,7 +367,8 @@ export const leadImages = [{
         width: 16,
         height: 9,
         alt: 'Alejandro Guijarro - N-0583-00-000135 (The Battle of San Romano)',
-        caption: 'N-0583-00-000135 (The Battle of San Romano) - Archival Pigment Print, 180 x 320 cm, 2016',
+        caption:
+            'N-0583-00-000135 (The Battle of San Romano) - Archival Pigment Print, 180 x 320 cm, 2016',
     },
     {
         source: {
@@ -365,17 +378,19 @@ export const leadImages = [{
         width: 4,
         height: 3,
         alt: 'Alejandro Guijarro - P01637a00xf2012 (The Brazen Serpent)',
-        caption: 'P01637a00xf2012 (The Brazen Serpent) - Archival Pigment Print, 207 x 234 cm, 2016',
+        caption:
+            'P01637a00xf2012 (The Brazen Serpent) - Archival Pigment Print, 207 x 234 cm, 2016',
     },
     {
         source: {
             regular: `${URL_LEAD}/P01915a00xf2008_(The_Annunciation).jpg`,
-            thumbnail: `${URL_LEAD_THUMB}/P01915a00xf2008_(The Annunciation)_thumb.jpg`,
+            thumbnail: `${URL_LEAD_THUMB}/P01915a00xf2008_(The_Annunciation)_thumb.jpg`,
         },
         width: 3,
         height: 4,
         alt: 'Alejandro Guijarro - P01915a00xf2008 (The Annunciation)',
-        caption: 'P01915a00xf2008 (The Annunciation) - Archival Pigment Print, 70 x 78 cm, 2016',
+        caption:
+            'P01915a00xf2008 (The Annunciation) - Archival Pigment Print, 70 x 78 cm, 2016',
     },
     {
         source: {
@@ -384,7 +399,8 @@ export const leadImages = [{
         },
         width: 16,
         height: 9,
-        alt: 'Alejandro Guijarro - Installation View - Tristan Hoare, London, 2017',
+        alt:
+            'Alejandro Guijarro - Installation View - Tristan Hoare, London, 2017',
         caption: 'Installation View - Tristan Hoare, London, 2017',
     },
     {
@@ -395,7 +411,8 @@ export const leadImages = [{
         width: 4,
         height: 3,
         alt: 'Alejandro Guijarro - P07767a00xf2011 (The Countess of Chinchon)',
-        caption: 'P07767a00xf2011 (The Countess of Chinchon) - Archival Pigment Print, 216 x 143 cm, 2016',
+        caption:
+            'P07767a00xf2011 (The Countess of Chinchon) - Archival Pigment Print, 216 x 143 cm, 2016',
     },
     {
         source: {
@@ -404,8 +421,10 @@ export const leadImages = [{
         },
         width: 16,
         height: 9,
-        alt: 'Alejandro Guijarro - 19207 (Boissy d`Anglas at the National Convention [20 May 1795])',
-        caption: '19207 (Boissy d`Anglas at the National Convention [20 May 1795]) - Archival Pigment Print, 79 x 104 cm, 2016',
+        alt:
+            'Alejandro Guijarro - 19207 (Boissy d`Anglas at the National Convention [20 May 1795])',
+        caption:
+            '19207 (Boissy d`Anglas at the National Convention [20 May 1795]) - Archival Pigment Print, 79 x 104 cm, 2016',
     },
     {
         source: {
@@ -414,8 +433,10 @@ export const leadImages = [{
         },
         width: 4,
         height: 3,
-        alt: 'Alejandro Guijarro - RX3000 (Michelangelo, Painter, Sculptor and Architect)',
-        caption: 'RX3000 (Michelangelo, Painter, Sculptor and Architect) - Archival Pigment Print, 40 x 49 cm, 2016',
+        alt:
+            'Alejandro Guijarro - RX3000 (Michelangelo, Painter, Sculptor and Architect)',
+        caption:
+            'RX3000 (Michelangelo, Painter, Sculptor and Architect) - Archival Pigment Print, 40 x 49 cm, 2016',
     },
     {
         source: {
@@ -424,8 +445,10 @@ export const leadImages = [{
         },
         width: 16,
         height: 9,
-        alt: 'Alejandro Guijarro - RX15259 (The Bed of Justice held in Parliament by a majority of Louis XV [February 22, 1723])',
-        caption: 'RX15259 (The Bed of Justice held in Parliament by a majority of Louis XV [February 22, 1723]) - Archival Pigment Print, 56 x 82 cm, 2016',
+        alt:
+            'Alejandro Guijarro - RX15259 (The Bed of Justice held in Parliament by a majority of Louis XV [February 22, 1723])',
+        caption:
+            'RX15259 (The Bed of Justice held in Parliament by a majority of Louis XV [February 22, 1723]) - Archival Pigment Print, 56 x 82 cm, 2016',
     },
     {
         source: {
@@ -434,8 +457,10 @@ export const leadImages = [{
         },
         width: 16,
         height: 9,
-        alt: 'Alejandro Guijarro - RX15260 (The Bestowal of the Order of Saint-Spirit, in the chapel of Versailles Palace [3 June 1724])',
-        caption: 'RX15260 (The Bestowal of the Order of Saint-Spirit, in the chapel of Versailles Palace [3 June 1724]) - Archival Pigment Print, 56 x 82 cm, 2016',
+        alt:
+            'Alejandro Guijarro - RX15260 (The Bestowal of the Order of Saint-Spirit, in the chapel of Versailles Palace [3 June 1724])',
+        caption:
+            'RX15260 (The Bestowal of the Order of Saint-Spirit, in the chapel of Versailles Palace [3 June 1724]) - Archival Pigment Print, 56 x 82 cm, 2016',
     },
     {
         source: {
@@ -445,9 +470,10 @@ export const leadImages = [{
         width: 3,
         height: 4,
         alt: 'Alejandro Guijarro - RX15088 (Mona Lisa)',
-        caption: 'RX15088 (Mona Lisa) - Archival Pigment Print, 77 x 53 cm, 2016',
+        caption:
+            'RX15088 (Mona Lisa) - Archival Pigment Print, 77 x 53 cm, 2016',
     },
-];
+]
 
 export const timeLinesImages = [{
         source: {
