@@ -107,8 +107,8 @@ export const momentumImages = [{
     },
     {
         source: {
-            regular: `${URL_MOMENTUM}/MIT _II.jpg`,
-            thumbnail: `${URL_MOMENTUM_THUMB}/MIT _II_thumb.jpg`,
+            regular: `${URL_MOMENTUM}/MIT_II.jpg`,
+            thumbnail: `${URL_MOMENTUM_THUMB}/MIT_II_thumb.jpg`,
         },
         width: 16,
         height: 9,
@@ -245,7 +245,7 @@ export const momentumImages = [{
         alt: 'Alejandro Guijarro - Stanford I',
         caption: 'Stanford I - C-type print, 117 x 240 cm, 2012',
     },
-];
+]
 
 export const leadImages = [{
         source: {
