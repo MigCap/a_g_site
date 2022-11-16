@@ -10,13 +10,16 @@ module.exports = {
     plugins: ['prettier'],
     rules: {
         'prettier/prettier': ['error', prettierOptions],
-        'no-console': process.env.NODE_ENV === 'production' ?
-            2 :
-            ['warn', { allow: ['warn', 'error', 'debug', 'info'] }],
+        'no-console':
+            process.env.NODE_ENV === 'production'
+                ? 2
+                : ['warn', { allow: ['warn', 'error', 'debug', 'info'] }],
     },
-    overrides: [{
-        files: ['**/*.js'],
-        rules: { 'prettier/prettier': ['warn', prettierOptions] },
-    }, ],
+    overrides: [
+        {
+            files: ['**/**.js'],
+            rules: { 'prettier/prettier': ['warn', prettierOptions] },
+        },
+    ],
     ignorePatterns: ['docs/*'],
 }
