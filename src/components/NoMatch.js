@@ -2,8 +2,6 @@ import React from 'react'
 import styled from 'styled-components/macro'
 import { Main } from '../styles'
 
-// const { colors } = theme;
-
 const NoMatchWrapper = styled.div`
     font-size: 1em;
     text-align: center;
