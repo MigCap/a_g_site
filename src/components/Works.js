@@ -1,21 +1,22 @@
 import React, { Fragment, useState } from 'react'
 // import PropTypes from 'prop-types';
+import Carousel, { Modal, ModalGateway } from 'react-images'
 import LazyLoad from 'react-lazyload'
 
 import styled from 'styled-components/macro'
 import { theme, media, Main } from '../styles'
+
 import {
     momentumImages,
     leadImages,
     timeLinesImages,
 } from '../constants/images'
 
-import Carousel, { Modal, ModalGateway } from 'react-images'
 import Footer from './Footer'
 
 const { colors } = theme
 
-const Title = styled.h1 `
+const Title = styled.h1`
     font-size: 0.7rem;
     font-weight: 500;
     margin: 2rem 0 3rem 0;
@@ -144,7 +145,7 @@ const Works = ({ worksModalIsOpen, setWorksModalIsOpen, ...rest }) => {
     const [timeLinesIndex, setTimeLinesIndex] = useState(0)
     const [isMomentum, setIsMomentum] = useState(false)
     const [isLead, setIsLead] = useState(false)
-    const [isTimeLines, setIsTimeLines] = useState(false)
+    // const [isTimeLines, setIsTimeLines] = useState(false)
 
     const toogleModal = () => {
         setWorksModalIsOpen(worksModalIsOpen => !worksModalIsOpen)
@@ -193,7 +194,7 @@ const Works = ({ worksModalIsOpen, setWorksModalIsOpen, ...rest }) => {
                                                 setTimeLinesIndex(0)
                                                 setIsMomentum(true)
                                                 setIsLead(false)
-                                                setIsTimeLines(false)
+                                                // setIsTimeLines(false)
                                                 setWorksModalIsOpen(true)
                                             }}
                                         >
@@ -228,7 +229,7 @@ const Works = ({ worksModalIsOpen, setWorksModalIsOpen, ...rest }) => {
                                             setTimeLinesIndex(0)
                                             setIsMomentum(false)
                                             setIsLead(true)
-                                            setIsTimeLines(false)
+                                            // setIsTimeLines(false)
                                             setWorksModalIsOpen(true)
                                         }}
                                     >
@@ -266,7 +267,7 @@ const Works = ({ worksModalIsOpen, setWorksModalIsOpen, ...rest }) => {
                                                 setTimeLinesIndex(index)
                                                 setIsMomentum(false)
                                                 setIsLead(false)
-                                                setIsTimeLines(true)
+                                                // setIsTimeLines(true)
                                                 setWorksModalIsOpen(true)
                                             }}
                                         >
