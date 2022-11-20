@@ -1,11 +1,12 @@
-const URL_MOMENTUM = '/static/images/Momentum';
-const URL_LEAD = '/static/images/Lead';
-const URL_TIMELINES = '/static/images/TimeLines';
-const URL_MOMENTUM_THUMB = '/static/images/Momentum/thumb';
-const URL_LEAD_THUMB = '/static/images/Lead/thumb';
-const URL_TIMELINES_THUMB = '/static/images/TimeLines/thumb';
+const URL_MOMENTUM = '/static/images/Momentum'
+const URL_LEAD = '/static/images/Lead'
+const URL_TIMELINES = '/static/images/TimeLines'
+const URL_MOMENTUM_THUMB = '/static/images/Momentum/thumb'
+const URL_LEAD_THUMB = '/static/images/Lead/thumb'
+const URL_TIMELINES_THUMB = '/static/images/TimeLines/thumb'
 
-export const momentumImages = [{
+export const momentumImages = [
+    {
         source: {
             regular: `${URL_MOMENTUM}/Cambridge_I.jpg`,
             thumbnail: `${URL_MOMENTUM_THUMB}/Cambridge_I_thumb.jpg`,
@@ -266,8 +267,7 @@ export const leadImages = [
         },
         width: 3,
         height: 4,
-        alt:
-            'Alejandro Guijarro - P01180a00xf2011 (Prince Baltasar Carlos on Horseback)',
+        alt: 'Alejandro Guijarro - P01180a00xf2011 (Prince Baltasar Carlos on Horseback)',
         caption:
             'P01180a00xf2011 (Prince Baltasar Carlos on Horseback) - Archival Pigment Print, 177 x 211 cm, 2016',
     },
@@ -278,8 +278,7 @@ export const leadImages = [
         },
         width: 16,
         height: 9,
-        alt:
-            'Alejandro Guijarro - Installation View, Tristan Hoare, London, 2017',
+        alt: 'Alejandro Guijarro - Installation View, Tristan Hoare, London, 2017',
         caption: 'Installation View - Tristan Hoare, London, 2017',
     },
     {
@@ -399,8 +398,7 @@ export const leadImages = [
         },
         width: 16,
         height: 9,
-        alt:
-            'Alejandro Guijarro - Installation View - Tristan Hoare, London, 2017',
+        alt: 'Alejandro Guijarro - Installation View - Tristan Hoare, London, 2017',
         caption: 'Installation View - Tristan Hoare, London, 2017',
     },
     {
@@ -421,8 +419,7 @@ export const leadImages = [
         },
         width: 16,
         height: 9,
-        alt:
-            'Alejandro Guijarro - 19207 (Boissy d`Anglas at the National Convention [20 May 1795])',
+        alt: 'Alejandro Guijarro - 19207 (Boissy d`Anglas at the National Convention [20 May 1795])',
         caption:
             '19207 (Boissy d`Anglas at the National Convention [20 May 1795]) - Archival Pigment Print, 79 x 104 cm, 2016',
     },
@@ -433,8 +430,7 @@ export const leadImages = [
         },
         width: 4,
         height: 3,
-        alt:
-            'Alejandro Guijarro - RX3000 (Michelangelo, Painter, Sculptor and Architect)',
+        alt: 'Alejandro Guijarro - RX3000 (Michelangelo, Painter, Sculptor and Architect)',
         caption:
             'RX3000 (Michelangelo, Painter, Sculptor and Architect) - Archival Pigment Print, 40 x 49 cm, 2016',
     },
@@ -445,8 +441,7 @@ export const leadImages = [
         },
         width: 16,
         height: 9,
-        alt:
-            'Alejandro Guijarro - RX15259 (The Bed of Justice held in Parliament by a majority of Louis XV [February 22, 1723])',
+        alt: 'Alejandro Guijarro - RX15259 (The Bed of Justice held in Parliament by a majority of Louis XV [February 22, 1723])',
         caption:
             'RX15259 (The Bed of Justice held in Parliament by a majority of Louis XV [February 22, 1723]) - Archival Pigment Print, 56 x 82 cm, 2016',
     },
@@ -457,8 +452,7 @@ export const leadImages = [
         },
         width: 16,
         height: 9,
-        alt:
-            'Alejandro Guijarro - RX15260 (The Bestowal of the Order of Saint-Spirit, in the chapel of Versailles Palace [3 June 1724])',
+        alt: 'Alejandro Guijarro - RX15260 (The Bestowal of the Order of Saint-Spirit, in the chapel of Versailles Palace [3 June 1724])',
         caption:
             'RX15260 (The Bestowal of the Order of Saint-Spirit, in the chapel of Versailles Palace [3 June 1724]) - Archival Pigment Print, 56 x 82 cm, 2016',
     },
@@ -475,7 +469,8 @@ export const leadImages = [
     },
 ]
 
-export const timeLinesImages = [{
+export const timeLinesImages = [
+    {
         source: {
             regular: `${URL_TIMELINES}/1_30_Nov_33.jpg`,
             thumbnail: `${URL_TIMELINES_THUMB}/1_30_Nov_33_thumb.jpg`,
@@ -685,8 +680,14 @@ export const timeLinesImages = [{
         alt: 'Alejandro Guijarro - 1 Abril 1939',
         caption: '1 Abril 1939 - Photogravure, 64 x 58 cm, 2019',
     },
-];
+]
+
+export const works = [
+    { id: 'momentum', title: 'Momentum', images: momentumImages },
+    { id: 'lead', title: 'Lead', images: leadImages },
+    { id: 'timeLines', title: 'Time Lines', images: timeLinesImages },
+]
 
 export const bioPic = {
     src: '/static/images/Bio/2_alejandro-guijarro.jpg',
-};
+}

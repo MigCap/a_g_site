@@ -1,6 +1,6 @@
 import React from 'react'
-
 import styled from 'styled-components/macro'
+
 import { theme, media } from '../styles'
 
 import { IconInstagram } from './icons'
@@ -73,10 +73,6 @@ const LinkStyled = styled.a`
     }
 `
 
-// const SectionTristan = styled.div`
-//     padding-top: 20px;
-// `
-
 const Rights = styled.div`
     grid-area: rights;
     grid-column: 1 / span 3;
@@ -110,7 +106,6 @@ const Rights = styled.div`
 
 const Contact = () => (
     <MainContact>
-        {/* <hr style={{ width: '70%' }} /> */}
         <p style={{ color: '#181818', fontWeight: 'bold' }}>Studio</p>
         <PrarragraphStyled>contact@alejandroguijarro.com</PrarragraphStyled>
         <LinkStyled
@@ -122,19 +117,6 @@ const Contact = () => (
             <p>Instagram</p>
         </LinkStyled>
 
-        {/* <SectionTristan>
-      <p style={{ color: '#181818', fontWeight: 'bold' }}>
-        Gallery Representation
-      </p>
-      <p>Tristan Hoare Gallery</p>
-      <p>6 Fitzroy Square, London W1T 5HJ</p>
-      <p>+44 (0)20 7383 4484</p>
-      <p>info@tristanhoare.co.uk</p>
-    </SectionTristan> */}
-
-        {/* <hr style={{ width: '100px' }} /> */}
-
-        {/* <hr style={{ width: '70%' }} /> */}
         <Rights>
             <p>
                 &copy; {new Date().getFullYear()} Alejandro Guijarro All Rights

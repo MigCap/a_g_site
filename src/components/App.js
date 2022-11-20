@@ -1,16 +1,16 @@
 import React, { useState } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import styled from 'styled-components/macro'
 
 import ScrollToTop from '../utils/ScrollToTop'
 
 import Nav from './Nav'
 import Home from './Home'
-import Works from './Works'
-import Bio from './Bio'
+import Works from './Works/Works'
+import Bio from './Bio/Bio'
 import Contact from './Contact'
 import NoMatch from './NoMatch'
 
-import styled from 'styled-components/macro'
 import { GlobalStyle, theme, media } from '../styles'
 
 const AppContainer = styled.div`
