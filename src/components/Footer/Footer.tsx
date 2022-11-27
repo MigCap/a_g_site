@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
-import { smoothScroll } from 'utils/SmoothScroll'
+import { smoothScroll } from 'components/SmoothScroll/SmoothScroll'
 
 import { IconInstagram } from '../icons'
 
@@ -11,7 +11,7 @@ import {
     FooterBackToTop,
     FooterNav,
     Rights,
-} from './styles'
+} from './footer.styles'
 
 const scrollToTop = () => {
     smoothScroll.scrollTo('root')
@@ -24,6 +24,7 @@ const Footer = () => (
                 href="https://www.instagram.com/alejandroguijarrostudio/"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Go to Alejandro Guijarro Instagram profile"
             >
                 <IconInstagram />
             </a>
@@ -63,6 +64,7 @@ const Footer = () => (
                     href="https://www.miguelcapellan.com"
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label="Go to site builder site"
                 >
                     MCV
                 </a>

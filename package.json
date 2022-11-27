@@ -14,13 +14,10 @@
         "react": "^16.8.6",
         "react-dom": "^16.8.6",
         "react-icons": "^4.6.0",
-        "react-images": "^1.1.7",
         "react-lazyload": "^2.6.2",
         "react-portal": "^4.2.1",
         "react-router-dom": "^5.0.1",
         "react-scripts": "^5.0.1",
-        "react-slick": "^0.28.1",
-        "slick-carousel": "^1.8.1",
         "styled-components": "^4.3.2",
         "zustand": "^4.1.4"
     },
@@ -45,7 +42,7 @@
         "husky": "^3.0.2",
         "lint-staged": "^9.2.1",
         "prettier": "1.19.1",
-        "typescript": "^4.9.3"
+        "typescript": "^4.9.0"
     },
     "browserslist": {
         "production": [
@@ -63,6 +60,6 @@
         "extends": "react-app"
     },
     "engines": {
-        "node": "10.16.0"
+        "node": "16.13.0"
     }
 }

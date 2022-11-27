@@ -1,50 +1,90 @@
-import React from 'react'
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import React, { useRef } from 'react'
 import { useParams } from 'react-router-dom'
+import { BiLeftArrow, BiBorderAll, BiRightArrow } from 'react-icons/bi'
 
-import { works, WORKS_IDS } from 'constants/images'
+import SpinnerDots from 'components/Spinner/SpinnerDots'
+import Footer from 'components/Footer/Footer'
 
-import Nav from './components/Nav/Nav'
+import useWorkDetail from './useWorkDetail'
 
 import {
     WorkDetailWrapper,
+    WorkDetailImgArrowsWrapper,
+    BtnIcon,
+    LeftArrow,
+    RightArrow,
     Img,
     ImgCaptionWrapper,
     Title,
+    FooterWrapper,
 } from './workDetail.styles'
 
 function WorkDetail() {
-    const { workId, index: i } = useParams<{ workId: string; index: string }>()
+    const { workId } = useParams<{ workId: string; index: string }>()
 
-    const index = Number(i)
+    const wrapperRef = useRef<HTMLDivElement>(null)
 
     if (workId) {
-        const currentWork = works?.[workId as WORKS_IDS]
-        const currentWorkImgs = currentWork?.images
-        const currentImg = currentWorkImgs?.[index]
-        const caption = currentImg?.caption
-        const hasSeparator = caption.indexOf('-') > 0
-        const startString = caption?.substr(0, caption.indexOf('-'))
-        const endString = caption?.substr(caption.indexOf('-'), caption.length)
+        const {
+            currentWork,
+            currentImg: {
+                alt,
+                source: { regular },
+            },
+            imgCaption,
+            handleTouchStart,
+            handleTouchMove,
+            goToWorks,
+            prev,
+            next,
+            imgLoaded,
+            onLoadImg,
+        } = useWorkDetail()
 
         return (
             <>
-                <WorkDetailWrapper>
-                    <Img src={currentImg?.source?.regular} />
+                <WorkDetailWrapper
+                    onTouchStart={handleTouchStart}
+                    onTouchMove={handleTouchMove}
+                    ref={wrapperRef}
+                >
+                    <WorkDetailImgArrowsWrapper>
+                        <LeftArrow>
+                            <BtnIcon
+                                id="previousBtn"
+                                aria-label="Previous Image"
+                            >
+                                <BiLeftArrow onClick={prev} />
+                            </BtnIcon>
+                        </LeftArrow>
+                        {!imgLoaded && <SpinnerDots />}
+                        <Img
+                            src={regular}
+                            alt={alt}
+                            onLoad={onLoadImg}
+                            style={imgLoaded ? {} : { display: 'none' }}
+                        />
+                        <RightArrow>
+                            <BtnIcon id="nextBtn" aria-label="Next Image">
+                                <BiRightArrow onClick={next} />
+                            </BtnIcon>
+                        </RightArrow>
+                    </WorkDetailImgArrowsWrapper>
                     <Title>{currentWork?.title}</Title>
-                    <Nav />
-                    <ImgCaptionWrapper>
-                        <p>
-                            {hasSeparator ? (
-                                <>
-                                    <strong>{startString}</strong>
-                                    {endString}
-                                </>
-                            ) : (
-                                <span>{caption}</span>
-                            )}
-                        </p>
-                    </ImgCaptionWrapper>
+                    <ImgCaptionWrapper>{imgCaption}</ImgCaptionWrapper>
+                    <BtnIcon
+                        id="backToWorksBtn"
+                        onClick={goToWorks}
+                        style={{ marginTop: '1rem' }}
+                        aria-label="Back to Works"
+                    >
+                        <BiBorderAll />
+                    </BtnIcon>
                 </WorkDetailWrapper>
+                <FooterWrapper>
+                    <Footer />
+                </FooterWrapper>
             </>
         )
     }

@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import Home from '../../pages/Home'
+import Home from '../../pages/Home/Home'
 import Works from '../../pages/Works/Works'
 import Bio from '../../pages/Bio/Bio'
-import Contact from '../../pages/Contact'
+import Contact from '../../pages/Contact/Contact'
 
 export enum ROUTES_IDS {
     HOME = 'home',

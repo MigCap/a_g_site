@@ -1,5 +1,6 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useCallback, useEffect, useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useRouteMatch } from 'react-router-dom'
 import shallow from 'zustand/shallow'
 
 import { useGlobalStore } from 'app/store/global.store'
@@ -11,6 +12,10 @@ function HeaderNav() {
         state => ({ worksModalIsOpen: state.worksModalIsOpen }),
         shallow,
     )
+
+    const match = useRouteMatch<any>('/works/:workId/:index')
+
+    const isWorkDetailPage = !!match?.params?.workId
 
     const [showNavBar, setShowNavBar] = useState<boolean>(true)
     const [scrollPos, setScrollPos] = useState<number>(0)
@@ -37,6 +42,8 @@ function HeaderNav() {
         document.body.getBoundingClientRect().top !== 0
             ? { boxShadow: '0 15px 15px -2px rgba(0, 0, 0, 0.2)' }
             : {}
+
+    if (isWorkDetailPage) return null
 
     return (
         <Transition>

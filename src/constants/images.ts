@@ -1,13 +1,3 @@
-const URL_IMAGES = '/static/images'
-const URL_MOMENTUM = `${URL_IMAGES}/Momentum`
-const URL_LEAD = `${URL_IMAGES}/Lead`
-const URL_TIMELINES = `${URL_IMAGES}/TimeLines`
-const URL_NARROW = `${URL_IMAGES}/Narrow`
-const URL_MOMENTUM_THUMB = `${URL_IMAGES}/Momentum/thumb`
-const URL_LEAD_THUMB = `${URL_IMAGES}/Lead/thumb`
-const URL_TIMELINES_THUMB = `${URL_IMAGES}/TimeLines/thumb`
-const URL_NARROW_THUMB = `${URL_IMAGES}/Narrow/thumb`
-
 export type TImagesArr = {
     source: {
         regular: string
@@ -24,8 +14,9 @@ export enum WORKS_IDS {
     LEAD = 'lead',
     TIMELINES = 'timeLines',
     NARROW = 'narrow',
+    LAPSO = 'lapso',
 }
-const { MOMENTUM, LEAD, TIMELINES, NARROW } = WORKS_IDS
+const { MOMENTUM, LEAD, TIMELINES, NARROW, LAPSO } = WORKS_IDS
 
 export interface IWork {
     id: WORKS_IDS
@@ -36,6 +27,18 @@ export interface IWork {
 export type IWorks = {
     [key in WORKS_IDS]: IWork
 }
+
+const URL_IMAGES = '/static/images'
+const URL_MOMENTUM = `${URL_IMAGES}/Momentum`
+const URL_LEAD = `${URL_IMAGES}/Lead`
+const URL_TIMELINES = `${URL_IMAGES}/TimeLines`
+const URL_NARROW = `${URL_IMAGES}/Narrow`
+const URL_LAPSO = `${URL_IMAGES}/Lapso`
+const URL_MOMENTUM_THUMB = `${URL_IMAGES}/Momentum/thumb`
+const URL_LEAD_THUMB = `${URL_IMAGES}/Lead/thumb`
+const URL_TIMELINES_THUMB = `${URL_IMAGES}/TimeLines/thumb`
+const URL_NARROW_THUMB = `${URL_IMAGES}/Narrow/thumb`
+const URL_LAPSO_THUMB = `${URL_IMAGES}/Lapso/thumb`
 
 export const momentumImages: TImagesArr = [
     {
@@ -925,6 +928,169 @@ export const narrowImages: TImagesArr = [
     },
 ]
 
+export const lapsoImages: TImagesArr = [
+    {
+        source: {
+            regular: `${URL_LAPSO}/Untitled_1.jpg`,
+            thumbnail: `${URL_LAPSO_THUMB}/Untitled_1_thumb.jpg`,
+        },
+        width: 3,
+        height: 4,
+        alt: 'Alejandro Guijarro - Untitled_1',
+        caption: 'Untitled_1',
+    },
+    {
+        source: {
+            regular: `${URL_LAPSO}/Untitled_2.jpg`,
+            thumbnail: `${URL_LAPSO_THUMB}/Untitled_2_thumb.jpg`,
+        },
+        width: 3,
+        height: 4,
+        alt: 'Alejandro Guijarro - Untitled_2',
+        caption: 'Untitled_2',
+    },
+    {
+        source: {
+            regular: `${URL_LAPSO}/Untitled_3.jpg`,
+            thumbnail: `${URL_LAPSO_THUMB}/Untitled_3_thumb.jpg`,
+        },
+        width: 3,
+        height: 4,
+        alt: 'Alejandro Guijarro - Untitled_3',
+        caption: 'Untitled_3',
+    },
+    {
+        source: {
+            regular: `${URL_LAPSO}/Untitled_4.jpg`,
+            thumbnail: `${URL_LAPSO_THUMB}/Untitled_4_thumb.jpg`,
+        },
+        width: 3,
+        height: 4,
+        alt: 'Alejandro Guijarro - Untitled_4',
+        caption: 'Untitled_4',
+    },
+    {
+        source: {
+            regular: `${URL_LAPSO}/Untitled_5.jpg`,
+            thumbnail: `${URL_LAPSO_THUMB}/Untitled_5_thumb.jpg`,
+        },
+        width: 3,
+        height: 4,
+        alt: 'Alejandro Guijarro - Untitled_5',
+        caption: 'Untitled_5',
+    },
+    {
+        source: {
+            regular: `${URL_LAPSO}/Untitled_6.jpg`,
+            thumbnail: `${URL_LAPSO_THUMB}/Untitled_6_thumb.jpg`,
+        },
+        width: 3,
+        height: 4,
+        alt: 'Alejandro Guijarro - Untitled_6',
+        caption: 'Untitled_6',
+    },
+    {
+        source: {
+            regular: `${URL_LAPSO}/Untitled_7.jpg`,
+            thumbnail: `${URL_LAPSO_THUMB}/Untitled_7_thumb.jpg`,
+        },
+        width: 3,
+        height: 4,
+        alt: 'Alejandro Guijarro - Untitled_7',
+        caption: 'Untitled_7',
+    },
+    {
+        source: {
+            regular: `${URL_LAPSO}/Untitled_8.jpg`,
+            thumbnail: `${URL_LAPSO_THUMB}/Untitled_8_thumb.jpg`,
+        },
+        width: 3,
+        height: 4,
+        alt: 'Alejandro Guijarro - Untitled_8',
+        caption: 'Untitled_8',
+    },
+    {
+        source: {
+            regular: `${URL_LAPSO}/Untitled_10.jpg`,
+            thumbnail: `${URL_LAPSO_THUMB}/Untitled_10_thumb.jpg`,
+        },
+        width: 3,
+        height: 4,
+        alt: 'Alejandro Guijarro - Untitled_10',
+        caption: 'Untitled_10',
+    },
+    {
+        source: {
+            regular: `${URL_LAPSO}/Untitled_11.jpg`,
+            thumbnail: `${URL_LAPSO_THUMB}/Untitled_11_thumb.jpg`,
+        },
+        width: 3,
+        height: 4,
+        alt: 'Alejandro Guijarro - Untitled_11',
+        caption: 'Untitled_11',
+    },
+    {
+        source: {
+            regular: `${URL_LAPSO}/Untitled_12.jpg`,
+            thumbnail: `${URL_LAPSO_THUMB}/Untitled_12_thumb.jpg`,
+        },
+        width: 3,
+        height: 4,
+        alt: 'Alejandro Guijarro - Untitled_12',
+        caption: 'Untitled_12',
+    },
+    {
+        source: {
+            regular: `${URL_LAPSO}/Untitled_15.jpg`,
+            thumbnail: `${URL_LAPSO_THUMB}/Untitled_15_thumb.jpg`,
+        },
+        width: 3,
+        height: 4,
+        alt: 'Alejandro Guijarro - Untitled_15',
+        caption: 'Untitled_15',
+    },
+    {
+        source: {
+            regular: `${URL_LAPSO}/Untitled_16.jpg`,
+            thumbnail: `${URL_LAPSO_THUMB}/Untitled_16_thumb.jpg`,
+        },
+        width: 3,
+        height: 4,
+        alt: 'Alejandro Guijarro - Untitled_16',
+        caption: 'Untitled_16',
+    },
+    {
+        source: {
+            regular: `${URL_LAPSO}/Untitled_17.jpg`,
+            thumbnail: `${URL_LAPSO_THUMB}/Untitled_17_thumb.jpg`,
+        },
+        width: 3,
+        height: 4,
+        alt: 'Alejandro Guijarro - Untitled_17',
+        caption: 'Untitled_17',
+    },
+    {
+        source: {
+            regular: `${URL_LAPSO}/Untitled_19.jpg`,
+            thumbnail: `${URL_LAPSO_THUMB}/Untitled_19_thumb.jpg`,
+        },
+        width: 3,
+        height: 4,
+        alt: 'Alejandro Guijarro - Untitled_19',
+        caption: 'Untitled_19',
+    },
+    {
+        source: {
+            regular: `${URL_LAPSO}/Untitled_20.jpg`,
+            thumbnail: `${URL_LAPSO_THUMB}/Untitled_20_thumb.jpg`,
+        },
+        width: 3,
+        height: 4,
+        alt: 'Alejandro Guijarro - Untitled_20',
+        caption: 'Untitled_20',
+    },
+]
+
 export const works: IWorks = {
     [MOMENTUM]: {
         id: MOMENTUM,
@@ -941,6 +1107,11 @@ export const works: IWorks = {
         id: NARROW,
         title: 'The Narrow Road to the Deep North and Other Travel Sketches',
         images: narrowImages,
+    },
+    [LAPSO]: {
+        id: LAPSO,
+        title: '[Lapso]',
+        images: lapsoImages,
     },
 }
 

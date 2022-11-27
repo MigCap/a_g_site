@@ -2,15 +2,15 @@
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
-import ScrollToTop from 'utils/ScrollToTop'
+import ScrollToTop from 'components/ScrollToTop/ScrollToTop'
 
 import Nav from 'components/HeaderNav/HeaderNav'
-import Home from 'pages/Home'
+import Home from 'pages/Home/Home'
 import Works from 'pages/Works/Works'
 import WorkDetail from 'pages/WorkDetail/WorkDetail'
 import Bio from 'pages/Bio/Bio'
-import Contact from 'pages/Contact'
-import NoMatch from 'pages/NoMatch'
+import Contact from 'pages/Contact/Contact'
+import NoMatch from 'pages/NoMatch/NoMatch'
 
 function Routes() {
     return (
